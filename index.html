@@ -73,6 +73,7 @@
   .cta-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);}
   .cta-btn.ghost:hover{background:rgba(255,255,255,.08);}
   .nav-actions{display:flex;align-items:center;gap:18px;}
+  .mobile-cta{display:none;}
   .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:3px;padding:8px 10px;cursor:pointer;}
   .menu-toggle span{display:block;width:18px;height:2px;background:#fff;margin:3px 0;}
 
@@ -86,6 +87,7 @@
     nav.primary a{width:100%;padding:10px 0;}
     .nav-actions .cta-btn.ghost{display:none;}
     .menu-toggle{display:block;}
+    .mobile-cta{display:inline-block;margin-top:10px;}
   }
 
   /* ---------- route sections ---------- */
@@ -311,7 +313,7 @@
       <a href="#/where-you-can-study" data-route="where-you-can-study">Where You Can Study</a>
       <a href="#/families" data-route="families">Families</a>
       <a href="#/about" data-route="about">About</a>
-      <a class="cta-btn ghost" style="margin-top:10px;display:inline-block;" href="#/families">Book Free Consultation</a>
+      <a class="cta-btn ghost mobile-cta" href="#/families">Book Free Consultation</a>
     </nav>
     <div class="nav-actions">
       <a class="cta-btn ghost" href="#/families">Book Free Consultation</a>
