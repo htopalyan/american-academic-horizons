@@ -73,7 +73,12 @@
   .cta-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);}
   .cta-btn.ghost:hover{background:rgba(255,255,255,.08);}
   .nav-actions{display:flex;align-items:center;gap:18px;}
-  .mobile-cta{display:none;}
+  nav.primary .mobile-cta{display:none;}
+  .portal-link{
+    display:flex;align-items:center;gap:6px;color:#DCE6F1;font-size:14px;font-weight:500;
+    text-decoration:none;padding:6px 0;
+  }
+  .portal-link:hover{color:#fff;}
   .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:3px;padding:8px 10px;cursor:pointer;}
   .menu-toggle span{display:block;width:18px;height:2px;background:#fff;margin:3px 0;}
 
@@ -85,9 +90,9 @@
     }
     nav.primary.open{display:flex;}
     nav.primary a{width:100%;padding:10px 0;}
-    .nav-actions .cta-btn.ghost{display:none;}
+    .nav-actions .cta-btn.ghost,.nav-actions .portal-link{display:none;}
     .menu-toggle{display:block;}
-    .mobile-cta{display:inline-block;margin-top:10px;}
+    nav.primary .mobile-cta{display:inline-flex;margin-top:10px;}
   }
 
   /* ---------- route sections ---------- */
@@ -313,9 +318,17 @@
       <a href="#/where-you-can-study" data-route="where-you-can-study">Where You Can Study</a>
       <a href="#/families" data-route="families">Families</a>
       <a href="#/about" data-route="about">About</a>
+      <a class="portal-link mobile-cta" href="#/families">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.8"/></svg>
+        Client Portal
+      </a>
       <a class="cta-btn ghost mobile-cta" href="#/families">Book Free Consultation</a>
     </nav>
     <div class="nav-actions">
+      <a class="portal-link" href="#/families">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.8"/></svg>
+        Client Portal
+      </a>
       <a class="cta-btn ghost" href="#/families">Book Free Consultation</a>
       <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
         <span></span><span></span><span></span>
