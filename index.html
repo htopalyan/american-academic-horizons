@@ -111,14 +111,48 @@
   .hero h1{font-size:clamp(32px,4.4vw,50px);line-height:1.08;letter-spacing:-.01em;margin-top:14px;}
   .hero .lede{font-size:18.5px;color:var(--ink-soft);margin-top:20px;max-width:52ch;}
   .hero .ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
-  .hero .cta-btn.secondary{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
-  .hero .cta-btn.secondary:hover{background:var(--navy);color:#fff;}
+  .cta-btn.secondary{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .cta-btn.secondary:hover{background:var(--navy);color:#fff;}
   .stat-strip{display:flex;gap:40px;margin-top:44px;flex-wrap:wrap;}
   .stat-strip .stat b{display:block;font-family:'Montserrat',sans-serif;font-size:27px;color:var(--navy);}
   .stat-strip .stat span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
 
   .hero-art{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:34px;}
-  .hero-art svg{width:100%;height:auto;}
+  .hero-art svg{width:100%;height:auto;overflow:visible;}
+  .hero-art .stage{cursor:pointer;}
+  .hero-art .stage .hit{fill:transparent;}
+  .hero-art .stage .node{
+    transform-box:fill-box;transform-origin:center;
+    transition:transform .18s ease,r .15s ease,fill .15s ease,stroke .15s ease;
+  }
+  .hero-art .stage .node.flag{transform-origin:center bottom;}
+  .hero-art .stage .label{
+    transform-box:fill-box;transform-origin:center;
+    transition:fill .15s ease,transform .18s ease;
+  }
+  .hero-art .stage:hover .node,.hero-art .stage:focus-visible .node{stroke-width:3.5;transform:scale(1.35);}
+  .hero-art .stage:hover .label,.hero-art .stage:focus-visible .label{transform:scale(1.15);}
+  .hero-art .stage[aria-pressed="true"] .node{fill:var(--gold);stroke:var(--gold-deep);r:9;}
+  .hero-art .stage[aria-pressed="true"] .node.flag{fill:none;stroke:none;}
+  .hero-art .stage[aria-pressed="true"] .node.flag rect,.hero-art .stage[aria-pressed="true"] .node.flag circle{filter:drop-shadow(0 0 2px rgba(201,138,31,.7));}
+  .hero-art .stage[aria-pressed="true"] .label{fill:var(--ink);font-weight:600;}
+  .hero-art .stage:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
+  .hero-art .pulse-wrap circle{animation:hero-travel 4.5s ease-in-out infinite;}
+  @media (prefers-reduced-motion: reduce){.hero-art .pulse-wrap{display:none;}}
+  @keyframes hero-travel{
+    0%{ transform:translateX(0); opacity:0; }
+    6%{ opacity:1; }
+    94%{ opacity:1; }
+    100%{ transform:translateX(300px); opacity:0; }
+  }
+  .hero-detail{
+    margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);min-height:52px;
+  }
+  .hero-detail b{
+    display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--gold-deep);margin-bottom:5px;font-weight:600;
+  }
+  .hero-detail span{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
 
   /* ---------- generic section head ---------- */
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
@@ -239,6 +273,22 @@
   .pillar h3{font-size:16.5px;}
   .pillar p{font-size:14.5px;color:var(--ink-soft);margin-top:8px;}
 
+  /* ---------- narrative / priority checklist (where you can study) ---------- */
+  .narrative p{color:var(--ink-soft);font-size:16.5px;line-height:1.75;margin-top:20px;}
+  .narrative p:first-of-type{margin-top:0;}
+  .narrative .lead-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:var(--ink);line-height:1.35;margin-top:0;text-wrap:balance;}
+  .narrative h2{font-size:20px;margin-top:48px;margin-bottom:2px;color:var(--navy);}
+  .narrative strong{color:var(--ink);font-weight:600;}
+
+  .priority-check{
+    margin-top:56px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:32px;
+  }
+  .priority-check h3{font-size:17px;}
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin:22px 0 28px;}
+  @media (max-width:560px){.check-grid{grid-template-columns:1fr;}}
+  .check-grid label{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink-soft);cursor:pointer;}
+  .check-grid input[type="checkbox"]{width:18px;height:18px;accent-color:var(--navy);cursor:pointer;flex:0 0 auto;}
+
   /* ---------- timeline (about) ---------- */
   .timeline{display:flex;justify-content:space-between;margin-top:56px;position:relative;gap:10px;}
   .timeline::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--line);}
@@ -247,8 +297,8 @@
   @media (max-width:760px){.t-stop{text-align:left;padding-left:22px;}}
   .t-stop i{width:9px;height:9px;border-radius:50%;background:var(--gold);display:block;margin:0 auto 12px;position:relative;z-index:1;}
   @media (max-width:760px){.t-stop i{position:absolute;left:0;top:5px;margin:0;}}
-  .t-stop .yr{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-deep);font-weight:600;}
-  .t-stop .d{font-size:14px;color:var(--ink-soft);margin-top:6px;max-width:22ch;margin-left:auto;margin-right:auto;}
+  .t-stop .yr{display:block;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold-deep);font-weight:600;}
+  .t-stop .d{display:block;font-size:14px;color:var(--ink-soft);margin-top:6px;max-width:22ch;margin-left:auto;margin-right:auto;}
   @media (max-width:760px){.t-stop .d{margin:6px 0 0;}}
 
   /* ---------- CTA band ---------- */
@@ -345,8 +395,8 @@
     <div class="wrap hero">
       <div>
         <span class="eyebrow" style="letter-spacing:.02em;">Pathways to a U.S. Degree</span>
-        <h1 id="home-h1">Your path from home to a U.S. degree, mapped, explained, and guided.</h1>
-        <p class="lede">Capable students deserve a trustworthy path into U.S. higher education, with whatever level of support a family needs, from one honest conversation to full guidance from application through arrival.</p>
+        <h1 id="home-h1">Your path to a U.S. degree, mapped, explained, and guided.</h1>
+        <p class="lede">Talented students deserve a trustworthy path into U.S. higher education, with any level of support your family needs, from a free consultation to end‑to‑end guidance through application and arrival.</p>
         <div class="ctas">
           <a class="cta-btn" href="#/families">Book a Free Consultation</a>
           <a class="cta-btn secondary" href="#/pathways">See Pathways &amp; Pricing</a>
@@ -357,28 +407,62 @@
           <div class="stat"><b>$0</b><span>To start — free consultation</span></div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 490 200" role="img" aria-label="A four-stage path from an initial conversation through application and enrollment to arrival, with a bracket showing that support scales to whatever level a family needs, plus an optional transfer stage afterward for the 2 plus 2 pathway">
+      <div class="hero-art">
+        <svg viewBox="0 0 490 200">
           <path d="M40 55 L40 45 L340 45 L340 55" fill="none" stroke="#5C6B78" stroke-width="1.2"/>
           <text x="190" y="26" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="0.04em" fill="#3C4A56" font-weight="600">AS MUCH SUPPORT AS YOU NEED</text>
 
           <line x1="40" y1="115" x2="340" y2="115" stroke="#003A70" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="40" cy="115" r="8" fill="#003A70"/>
-          <circle cx="143" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-          <circle cx="247" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-          <path d="M350 93 L374 103 L350 113 L326 103 Z" fill="#F8C744"/>
-          <rect x="342" y="113" width="16" height="4" fill="#F8C744"/>
+          <g class="pulse-wrap"><circle cx="40" cy="115" r="4" fill="#F8C744"/></g>
+          <line x1="373" y1="115" x2="450" y2="115" stroke="#8B99A3" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
 
-          <line x1="366" y1="115" x2="450" y2="115" stroke="#8B99A3" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
-          <circle cx="460" cy="115" r="6" fill="#fff" stroke="#8B99A3" stroke-width="2" stroke-dasharray="2 2"/>
-
-          <text x="40" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">CONVERSATION</text>
-          <text x="143" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">APPLICATION</text>
-          <text x="247" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ENROLLMENT &amp; VISA</text>
-          <text x="350" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ARRIVAL</text>
-          <text x="460" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#8B99A3">TRANSFER</text>
-          <text x="460" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-style="italic" fill="#8B99A3">(optional)</text>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="conversation" data-title="Conversation" data-detail="A free 30&#8209;minute call to learn your options — no obligation, one per family.">
+            <circle class="hit" cx="40" cy="115" r="18"/>
+            <circle class="node" cx="40" cy="115" r="8" fill="#003A70" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="40" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">CONVERSATION</text>
+          </g>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="application" data-title="Application" data-detail="We manage your applications and prepare every document, from transcripts to essays.">
+            <circle class="hit" cx="143" cy="115" r="18"/>
+            <circle class="node" cx="143" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="143" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">APPLICATION</text>
+          </g>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="enrollment" data-title="Enrollment &amp; Visa" data-detail="Visa interview prep and ongoing communication with your college or university, included.">
+            <circle class="hit" cx="247" cy="115" r="18"/>
+            <circle class="node" cx="247" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="247" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ENROLLMENT &amp; VISA</text>
+          </g>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="arrival" data-title="Arrival" data-detail="90 days of on&#8209;campus support after you enroll — we don't disappear once you're admitted.">
+            <circle class="hit" cx="356" cy="103" r="23"/>
+            <g class="node flag">
+              <line x1="341" y1="106" x2="341" y2="115" stroke="#5C6B78" stroke-width="2" stroke-linecap="round"/>
+              <rect x="341" y="87" width="30" height="19" fill="#fff" stroke="#D8D4C4" stroke-width="0.5"/>
+              <rect x="341" y="87" width="30" height="2.1" fill="#B22234"/>
+              <rect x="341" y="91.3" width="30" height="2.1" fill="#B22234"/>
+              <rect x="341" y="95.6" width="30" height="2.1" fill="#B22234"/>
+              <rect x="341" y="99.9" width="30" height="2.1" fill="#B22234"/>
+              <rect x="341" y="104.2" width="30" height="1.8" fill="#B22234"/>
+              <rect x="341" y="87" width="13" height="10.5" fill="#3C3B6E"/>
+              <circle cx="344.5" cy="89.5" r="0.7" fill="#fff"/>
+              <circle cx="349" cy="89.5" r="0.7" fill="#fff"/>
+              <circle cx="353.5" cy="89.5" r="0.7" fill="#fff"/>
+              <circle cx="346.7" cy="92.5" r="0.7" fill="#fff"/>
+              <circle cx="351.2" cy="92.5" r="0.7" fill="#fff"/>
+              <circle cx="344.5" cy="95.5" r="0.7" fill="#fff"/>
+              <circle cx="349" cy="95.5" r="0.7" fill="#fff"/>
+            </g>
+            <text class="label" x="356" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ARRIVAL</text>
+          </g>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="transfer" data-title="Transfer (optional)" data-detail="For the 2+2 route: year&#8209;two transfer support to your university, priced separately.">
+            <circle class="hit" cx="460" cy="115" r="18"/>
+            <circle class="node" cx="460" cy="115" r="6" fill="#fff" stroke="#8B99A3" stroke-width="2" stroke-dasharray="2 2"/>
+            <text class="label" x="460" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#8B99A3">TRANSFER</text>
+            <text x="460" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-style="italic" fill="#8B99A3">(optional)</text>
+          </g>
         </svg>
+        <div class="hero-detail" aria-live="polite">
+          <b id="hero-detail-title">Conversation</b>
+          <span id="hero-detail-text">A free 30&#8209;minute call to learn your options — no obligation, one per family.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -395,41 +479,41 @@
       <div class="pathway-grid">
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
-          <h3>Community College Direct</h3>
-          <div class="price">$700</div>
+          <div class="price">$500</div>
+          <h3>Pathway Starter</h3>
           <ul>
-            <li>3 partner community colleges</li>
-            <li>6 advising sessions</li>
-            <li>Fast Track option in Washington State</li>
+            <li>2 advising sessions — college matching &amp; direction</li>
+            <li>Advice only, no applications submitted</li>
+            <li>Full credit toward a fuller package within 90 days</li>
           </ul>
-          <span class="best">Best for students 16+ needing an academic or English on&#8209;ramp.</span>
+          <span class="best">Best for families who want expert direction before committing further.</span>
         </div>
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
-          <h3>Flagship 2+2 Guided</h3>
-          <div class="price">$1,500</div>
-          <ul>
-            <li>2 years college, 2 years named university</li>
-            <li>Built for CA, WA, TX &amp; MA transfer systems</li>
-            <li>6 advising sessions</li>
-          </ul>
-          <span class="best">Best for cost&#8209;conscious families who still want a flagship degree.</span>
-        </div>
-        <div class="pathway-card">
-          <span class="kicker">Pathway</span>
-          <h3>Direct Bachelor's</h3>
           <div class="price">$2,000</div>
+          <h3>Full&#8209;Service Pathway</h3>
           <ul>
-            <li>One university, start to finish</li>
-            <li>8 advising sessions + essay coaching</li>
-            <li>Needs 6–12 months lead time</li>
+            <li>We manage 3 applications for you</li>
+            <li>Community college credential or a 2+2 transfer route</li>
+            <li>6 advising sessions</li>
           </ul>
-          <span class="best">Best for academically&#8209;ready students avoiding a mid&#8209;degree transfer.</span>
+          <span class="best">Best for cost&#8209;conscious families, or students with a clear field of study in mind.</span>
+        </div>
+        <div class="pathway-card">
+          <span class="kicker">Pathway</span>
+          <div class="price">$3,000</div>
+          <h3>Direct Admission Premium</h3>
+          <ul>
+            <li>We manage 3 applications for you</li>
+            <li>Direct four&#8209;year admission, no mid&#8209;degree transfer</li>
+            <li>8 advising sessions + essay coaching</li>
+          </ul>
+          <span class="best">Best for academically&#8209;ready students who want one continuous experience.</span>
         </div>
         <div class="pathway-card free">
           <span class="kicker">Start here</span>
-          <h3>Complimentary Consultation</h3>
           <div class="price">Free</div>
+          <h3>Complimentary Consultation</h3>
           <ul>
             <li>One 30&#8209;minute session</li>
             <li>Learn → Locate → Choose</li>
@@ -451,9 +535,9 @@
         <a class="link-more" href="#/where-you-can-study">See the full details →</a>
       </div>
       <div class="stat-strip" style="margin-top:32px;">
-        <div class="stat"><b>60+</b><span>Colleges we collaborate with</span></div>
-        <div class="stat"><b>6+</b><span>Direct community college pathways</span></div>
+        <div class="stat"><b>60+</b><span>Colleges in Eurasia Foundation's broader network</span></div>
       </div>
+      <p class="sec-sub measure" style="margin-top:20px;font-size:14.5px;">We're finalizing formal pathway agreements now. Until one is signed, we describe partners by institution type and region — not by name.</p>
     </div>
   </div>
 
@@ -485,7 +569,7 @@
   <div class="band navy cta-band">
     <div class="wrap">
       <h2>Start with a free 30&#8209;minute consultation.</h2>
-      <p>No obligation, one per family. We'll help you learn your options, locate a fit, and choose a pathway — or tell you honestly if this isn't the right one.</p>
+      <p>From that first conversation through college matching, document prep, visa readiness, and 90 days of on&#8209;campus support after you enroll, we're with you at every step. One free consultation per family, no obligation, and we'll always point you toward the pathway that actually fits.</p>
       <div class="ctas">
         <a class="cta-btn" href="#/families">Book Your Free Consultation</a>
       </div>
@@ -498,60 +582,61 @@
   <div class="band tight">
     <div class="wrap">
       <span class="eyebrow">Pathways &amp; Pricing</span>
-      <h1 id="pathways-h1" style="font-size:clamp(28px,4vw,42px);margin-top:12px;">Three ways to a U.S. degree — priced up front.</h1>
+      <h1 id="pathways-h1" style="font-size:clamp(28px,4vw,42px);margin-top:12px;">Choose the level of support you need — priced up front.</h1>
       <p class="sec-sub measure">Every package below lists exactly what's included. No number appears only after a phone call.</p>
 
       <div class="pathway-grid" style="margin-top:48px;">
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
-          <h3>Community College Direct</h3>
-          <div class="price">$700</div>
+          <div class="price">$500</div>
+          <h3>Pathway Starter</h3>
           <ul>
-            <li>3 partner community colleges</li>
-            <li>6 advising sessions (45 min)</li>
-            <li>Fast Track option (WA): U.S. high school diploma + associate degree together, no home&#8209;country diploma required</li>
-            <li>OPT&#8209;eligible technical &amp; career programs</li>
-            <li>90 days of on&#8209;campus support after enrollment</li>
+            <li>2 advising sessions (45 min): college matching and direction</li>
+            <li>Advice only — no applications submitted on your behalf</li>
+            <li>Full credit toward a fuller package if you upgrade within 90 days</li>
           </ul>
-          <span class="best">Best for students 16+, career&#8209;changers, or those needing an academic or English on&#8209;ramp.</span>
-          <a class="card-cta" href="#/families">Book a free consultation →</a>
-        </div>
-        <div class="pathway-card">
-          <span class="kicker">Pathway · Flagship</span>
-          <h3>Flagship 2+2 Guided</h3>
-          <div class="price">$1,500</div>
-          <ul>
-            <li>2 years at a partner community college, 2 at a named university</li>
-            <li>6 advising sessions (45 min)</li>
-            <li>Built around CA (CC→UC/CSU), WA (Direct Transfer Agreement), TX (statewide core) &amp; MA (MassTransfer)</li>
-            <li>Year&#8209;two transfer support priced separately</li>
-          </ul>
-          <span class="best">Best for cost&#8209;conscious families who still want a named four&#8209;year degree.</span>
+          <span class="best">Best for families who want expert direction before committing to full application support.</span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
         </div>
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
-          <h3>Direct Bachelor's Program</h3>
           <div class="price">$2,000</div>
+          <h3>Full&#8209;Service Pathway</h3>
           <ul>
-            <li>One university, start to finish — no mid&#8209;degree transfer</li>
-            <li>8 advising sessions (45 min)</li>
-            <li>Essay &amp; statement&#8209;of&#8209;purpose coaching</li>
-            <li>Scholarship identification (never guaranteed)</li>
-            <li>Requires 6–12 months lead time before intake</li>
+            <li>We manage your applications to 3 partner&#8209;type community colleges</li>
+            <li>Choose a community college credential, or a 2+2 transfer route toward a university degree</li>
+            <li>College matching, document prep, and 6 advising sessions (45 min)</li>
+            <li>Visa interview prep and ongoing communication with your college, included</li>
+            <li>90 days of on&#8209;campus support after enrollment</li>
+            <li>If you choose the 2+2 route: built around CA (CC→UC/CSU), WA (Direct Transfer Agreement), TX (statewide core) &amp; MA (MassTransfer); year&#8209;two transfer support priced separately</li>
+          </ul>
+          <span class="best">Best for cost&#8209;conscious families, or students with a clear field of study already in mind. <a href="#what-is-2plus2" style="color:var(--navy);font-weight:600;">What's a 2+2, exactly? →</a></span>
+          <a class="card-cta" href="#/families">Book a free consultation →</a>
+        </div>
+        <div class="pathway-card">
+          <span class="kicker">Pathway</span>
+          <div class="price">$3,000</div>
+          <h3>Direct Admission Premium</h3>
+          <ul>
+            <li>We manage your applications to 3 partner&#8209;type universities</li>
+            <li>Direct four&#8209;year admission — no mid&#8209;degree transfer</li>
+            <li>8 advising sessions (45 min), including essay &amp; statement&#8209;of&#8209;purpose coaching</li>
+            <li>Visa interview prep and ongoing communication with your university, included</li>
+            <li>90 days of on&#8209;campus support after enrollment</li>
+            <li>Scholarship identification (never guaranteed) · requires 6–12 months lead time before intake</li>
           </ul>
           <span class="best">Best for academically&#8209;ready students who want one continuous experience.</span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
         </div>
         <div class="pathway-card free">
           <span class="kicker">Start here</span>
-          <h3>Complimentary Consultation</h3>
           <div class="price">Free</div>
+          <h3>Complimentary Consultation</h3>
           <ul>
             <li>One 30&#8209;minute session</li>
             <li><b>Learn</b> your realistic options</li>
             <li><b>Locate</b> a pathway that fits</li>
-            <li><b>Choose</b> — or we refer you to EducationUSA if we're not the right fit</li>
+            <li><b>Choose</b> a pathway, or we'll share useful resources if we're not a good fit together</li>
             <li>One free session per family</li>
           </ul>
           <a class="card-cta" href="#/families">Book yours →</a>
@@ -562,15 +647,27 @@
         <table class="compare">
           <caption style="text-align:left;font-size:13px;color:var(--muted);margin-bottom:14px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.05em;">Side by side</caption>
           <thead>
-            <tr><th>Package</th><th>Price</th><th>Colleges / Universities</th><th>Sessions</th><th>Support window</th></tr>
+            <tr><th>Package</th><th>Price</th><th>Applications</th><th>Sessions</th><th>Support window</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Community College Direct</th><td>$700</td><td>3 partner colleges</td><td>6 × 45 min</td><td>90 days on campus</td></tr>
-            <tr><th scope="row">Flagship 2+2 Guided</th><td>$1,500</td><td>2 partner colleges</td><td>6 × 45 min</td><td>90 days on campus</td></tr>
-            <tr><th scope="row">Direct Bachelor's</th><td>$2,000</td><td>3 partner universities</td><td>8 × 45 min</td><td>90 days on campus</td></tr>
+            <tr><th scope="row">Pathway Starter</th><td>$500</td><td>0 (advice only)</td><td>2 × 45 min</td><td>90&#8209;day upgrade credit</td></tr>
+            <tr><th scope="row">Full&#8209;Service Pathway</th><td>$2,000</td><td>3</td><td>6 × 45 min</td><td>90 days on campus</td></tr>
+            <tr><th scope="row">Direct Admission Premium</th><td>$3,000</td><td>3</td><td>8 × 45 min</td><td>90 days on campus</td></tr>
             <tr><th scope="row">Complimentary Consultation</th><td>Free</td><td>—</td><td>1 × 30 min</td><td>Lead&#8209;in only</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <div id="what-is-2plus2" style="margin-top:64px;scroll-margin-top:90px;">
+        <span class="eyebrow">What is 2+2?</span>
+        <h2 style="margin-top:10px;font-size:24px;">Two colleges, one degree.</h2>
+        <p class="sec-sub measure" style="margin-top:14px;">A 2+2 pathway means two years at a community college, then two years at a four&#8209;year university, finishing the same bachelor's degree. Community colleges are accredited, two&#8209;year U.S. institutions — smaller classes, lower cost, and an easier place to build academic footing before transferring. When credits transfer under a real articulation agreement, the diploma reads as a straight degree from the university. Where a student started isn't on it.</p>
+        <div class="pillar-grid">
+          <div class="pillar"><h3>Cost matters to your family</h3><p>Two years of community college tuition run well below university tuition, without changing the degree at the end.</p></div>
+          <div class="pillar"><h3>You need a grade runway</h3><p>A stronger transcript from community college can open doors to a more selective university than direct admission would.</p></div>
+          <div class="pillar"><h3>You're adjusting to the U.S. system</h3><p>Smaller classes and closer advising make the first year or two an easier place to learn how American higher education works.</p></div>
+          <div class="pillar"><h3>Your English is conversational, not yet academic</h3><p>Community college gives room to build academic English before the pace picks up at a university.</p></div>
+        </div>
       </div>
 
       <div class="disclosure">We provide education, preparation and honest advising — not guarantees. College placement fees are billed to partner institutions once a student enrolls, never added to your family's price.</div>
@@ -583,16 +680,64 @@
   <div class="band tight">
     <div class="wrap">
       <span class="eyebrow">Where You Can Study</span>
-      <h1 id="where-h1" style="font-size:clamp(28px,4vw,42px);margin-top:12px;">A growing network of U.S. colleges.</h1>
-      <p class="sec-sub measure">We collaborate with more than 60 colleges nationwide, with direct pathways already built at more than half a dozen U.S. community colleges.</p>
+      <h1 id="where-h1" style="font-size:clamp(28px,4vw,42px);margin-top:12px;max-width:16ch;">Find the U.S. Education Experience That Fits You</h1>
+    </div>
+  </div>
 
-      <div class="stat-strip" style="margin-top:40px;">
-        <div class="stat"><b>60+</b><span>Colleges we collaborate with</span></div>
-        <div class="stat"><b>6+</b><span>Direct community college pathways</span></div>
+  <div class="band">
+    <div class="wrap" style="max-width:740px;">
+      <div class="narrative">
+        <p class="lead-q">Have you ever felt like you were meant to go further than your hometown?</p>
+        <p>Maybe you want a world&#8209;recognized degree that opens doors internationally. Maybe you're looking for access to opportunities you can't find at home. Or maybe you've simply imagined yourself having the American college experience you've seen in movies.</p>
+        <p>Whatever brings you here, your path to studying in the United States starts with a much more important question than "Where should I study?" <strong>What do you want your future to look like?</strong></p>
+
+        <h2>There is more than one path</h2>
+        <p>Where are you in your education today? How strong is your academic record? What have you done outside the classroom? What do you want to study, and what would you like to do afterward?</p>
+        <p>Your answers help determine the path that makes the most sense for you.</p>
+        <p>U.S. higher education offers many possibilities. You might begin at a community college and earn an associate degree, choose a specialized career&#8209;focused program, or use community college as an affordable pathway to transfer to a four&#8209;year institution. You might apply directly to a college or university for the full four&#8209;year undergraduate experience. And later, graduate and professional programs can take your education even further.</p>
+        <p><strong>There isn't one right route. There is a route that is right for you.</strong></p>
+
+        <h2>Now imagine where you would be happiest</h2>
+        <p>Choosing a university isn't only about rankings and academics. You will be building a life there, too.</p>
+        <p>Would you thrive at a large university with 50,000 students, major sports, hundreds of student organizations, and something happening every day? Or would you feel more comfortable at a smaller college where professors know your name and the campus feels like a close community?</p>
+        <p>Can you picture yourself studying in the middle of a major city surrounded by people from all over the world? Or would you rather experience life in a smaller American college town?</p>
+        <p>Would you love to live near the ocean? Experience four distinct seasons? See snow for the first time? Or spend your college years somewhere warm and sunny all year round?</p>
+        <p>And what else matters to you — campus life, sports, research opportunities, internships, safety, cost, cultural diversity, proximity to an airport, or having an international community nearby?</p>
+
+        <h2>Your priorities become part of the search</h2>
+        <p>We look at the whole picture: your academics, interests, career goals, budget, preferred environment, and the kind of experience you want to have.</p>
+        <p>Then we help you explore institutions and pathways where those pieces come together.</p>
+        <p>Because finding the right fit means more than getting admitted. We want you to find a place where you can succeed academically, move toward the career you envision, build relationships, experience life in the United States, and genuinely enjoy the years you spend there.</p>
+        <p><strong>Your U.S. education should fit your ambitions, your circumstances, and you.</strong></p>
       </div>
 
-      <p class="sec-sub measure" style="margin-top:40px;">Have a college in mind that isn't in our network yet? Let us know and we'll reach out on your behalf.</p>
-      <a class="cta-btn" href="#/families" style="display:inline-block;margin-top:22px;">Tell Us Where You Want to Go</a>
+      <div class="priority-check">
+        <h3>What's most important to me?</h3>
+        <div class="check-grid">
+          <label><input type="checkbox"> Academic reputation</label>
+          <label><input type="checkbox"> Career opportunities</label>
+          <label><input type="checkbox"> Affordability</label>
+          <label><input type="checkbox"> Campus experience</label>
+          <label><input type="checkbox"> International community</label>
+          <label><input type="checkbox"> Sports and student life</label>
+          <label><input type="checkbox"> Location</label>
+          <label><input type="checkbox"> Something else</label>
+        </div>
+        <a class="cta-btn" href="#/families">Explore My Path</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="band panel">
+    <div class="wrap">
+      <span class="eyebrow">Backed by a real network</span>
+      <h2 style="margin-top:10px;font-size:24px;">A growing network of U.S. colleges.</h2>
+      <div class="stat-strip" style="margin-top:32px;">
+        <div class="stat"><b>60+</b><span>Colleges in Eurasia Foundation's broader network</span></div>
+      </div>
+      <p class="sec-sub measure" style="margin-top:20px;font-size:14.5px;">We're finalizing formal pathway agreements now. Until one is signed, we describe partners by institution type and region — not by name.</p>
+      <p class="sec-sub measure" style="margin-top:28px;">Have a college in mind that isn't in our network yet? Let us know and we'll reach out on your behalf.</p>
+      <a class="cta-btn secondary" href="#/families" style="display:inline-block;margin-top:22px;">Tell Us Where You Want to Go</a>
     </div>
   </div>
 </section>
@@ -609,9 +754,9 @@
         <div>
           <label for="calc-pathway">Pathway</label>
           <select id="calc-pathway">
-            <option value="700">Community College Direct — $700</option>
-            <option value="1500" selected>Flagship 2+2 Guided — $1,500</option>
-            <option value="2000">Direct Bachelor's — $2,000</option>
+            <option value="500">Pathway Starter — $500</option>
+            <option value="2000" selected>Full&#8209;Service Pathway — $2,000</option>
+            <option value="3000">Direct Admission Premium — $3,000</option>
           </select>
         </div>
         <div>
@@ -623,7 +768,7 @@
           </select>
         </div>
         <div class="result">
-          <div class="amt" id="calc-amt">$1,500</div>
+          <div class="amt" id="calc-amt">$2,000</div>
           <div class="note" id="calc-note">+ tuition &amp; living, which vary by state and college — your advisor confirms exact figures at your free consultation.</div>
         </div>
       </div>
@@ -677,9 +822,9 @@
             <div class="field"><label for="f-pathway">Pathway of interest</label>
               <select id="f-pathway" name="pathway">
                 <option>Not sure yet</option>
-                <option>Community College Direct</option>
-                <option>Flagship 2+2 Guided</option>
-                <option>Direct Bachelor's</option>
+                <option>Pathway Starter</option>
+                <option>Full-Service Pathway</option>
+                <option>Direct Admission Premium</option>
               </select>
             </div>
           </div>
@@ -712,6 +857,7 @@
       <div style="margin-top:64px;max-width:70ch;">
         <h2 style="font-size:22px;">Why a foundation is doing this.</h2>
         <p style="margin-top:14px;color:var(--ink-soft);font-size:16px;">For thirty years, Eurasia Foundation has worked directly in the communities it serves — not as a distant funder, but as a partner on the ground. American Academic Horizons grew out of a simple observation: talented students across Central Asia have real paths to U.S. colleges, and smaller U.S. colleges have real room for them, but almost nobody is connecting the two honestly. So we built the connection ourselves, using the same standards of transparency and accountability that have defined our work since 1994.</p>
+        <p style="margin-top:14px;font-size:15px;"><a href="https://eurasia.org" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold);">See Eurasia Foundation's full history and current programs at eurasia.org ↗</a></p>
       </div>
 
       <div class="pillar-grid">
@@ -831,5 +977,23 @@
     confirm.classList.add('show');
     confirm.scrollIntoView({behavior: 'smooth', block: 'nearest'});
   });
+
+  var stages = document.querySelectorAll('.hero-art .stage');
+  var detailTitle = document.getElementById('hero-detail-title');
+  var detailText = document.getElementById('hero-detail-text');
+  function activateStage(stage){
+    stages.forEach(function(s){ s.setAttribute('aria-pressed', s === stage ? 'true' : 'false'); });
+    detailTitle.textContent = stage.dataset.title;
+    detailText.textContent = stage.dataset.detail;
+  }
+  stages.forEach(function(s){
+    s.addEventListener('click', function(){ activateStage(s); });
+    s.addEventListener('mouseenter', function(){ activateStage(s); });
+    s.addEventListener('focus', function(){ activateStage(s); });
+    s.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activateStage(s); }
+    });
+  });
+  if(stages.length){ activateStage(stages[0]); }
 })();
 </script>
