@@ -52,7 +52,8 @@
     box-shadow:0 1px 0 rgba(255,255,255,.08);
   }
   .site-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px;}
-  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;min-width:0;}
+  .brand svg{flex:0 0 auto;}
   .brand .name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:-.01em;line-height:1.15;}
   .brand .parent{
     display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;
@@ -72,14 +73,14 @@
   .cta-btn:hover{background:#ffd668;}
   .cta-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);}
   .cta-btn.ghost:hover{background:rgba(255,255,255,.08);}
-  .nav-actions{display:flex;align-items:center;gap:18px;}
+  .nav-actions{display:flex;align-items:center;gap:18px;flex:0 0 auto;}
   nav.primary .mobile-cta{display:none;}
   .portal-link{
     display:flex;align-items:center;gap:6px;color:#DCE6F1;font-size:14px;font-weight:500;
     text-decoration:none;padding:6px 0;
   }
   .portal-link:hover{color:#fff;}
-  .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:3px;padding:8px 10px;cursor:pointer;}
+  .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:3px;padding:11px 12px;cursor:pointer;flex:0 0 auto;}
   .menu-toggle span{display:block;width:18px;height:2px;background:#fff;margin:3px 0;}
 
   @media (max-width:900px){
@@ -93,6 +94,15 @@
     .nav-actions .cta-btn.ghost,.nav-actions .portal-link{display:none;}
     .menu-toggle{display:block;}
     nav.primary .mobile-cta{display:inline-flex;margin-top:10px;}
+  }
+  @media (max-width:400px){
+    .wrap{padding:0 18px;}
+    .brand{gap:8px;}
+    .brand svg{width:28px;height:28px;}
+    .brand .name{font-size:14px;}
+    .brand .parent{font-size:8.5px;}
+    .site-nav{gap:10px;}
+    .hero-art{padding:18px;}
   }
 
   /* ---------- route sections ---------- */
@@ -247,10 +257,10 @@
   @media (max-width:760px){.calc{grid-template-columns:1fr;}}
   .calc label{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
   .calc select{
-    width:100%;font-family:'Hind',sans-serif;font-size:15px;font-weight:600;color:var(--ink);
+    width:100%;font-family:'Hind',sans-serif;font-size:16px;font-weight:600;color:var(--ink);
     border:1px solid var(--line);border-radius:4px;padding:11px 12px;background:#fff;
   }
-  .calc .result{background:var(--panel);border-radius:4px;padding:14px 18px;min-width:220px;}
+  .calc .result{background:var(--panel);border-radius:4px;padding:14px 18px;min-width:0;}
   .calc .result .amt{font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--navy);}
   .calc .result .note{font-size:12px;color:var(--muted);margin-top:4px;max-width:26ch;}
 
@@ -340,7 +350,7 @@
   @media (max-width:520px){.form-wrap .grid2{grid-template-columns:1fr;}}
   .form-wrap label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:7px;}
   .form-wrap input,.form-wrap select,.form-wrap textarea{
-    width:100%;font-family:'Hind',sans-serif;font-size:15px;padding:10px 12px;border:1px solid var(--line);
+    width:100%;font-family:'Hind',sans-serif;font-size:16px;padding:10px 12px;border:1px solid var(--line);
     border-radius:4px;color:var(--ink);background:#fff;
   }
   .form-wrap .field{margin-bottom:18px;}
@@ -1029,8 +1039,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Eurasia Foundation. American Academic Horizons is a program of Eurasia Foundation. <a href="#/terms" style="color:inherit;text-decoration:underline;">Terms</a> · <a href="#/privacy" style="color:inherit;text-decoration:underline;">Privacy</a></span>
       <span>Admission and visa decisions aren't ours to make — but if either doesn't go your way on a Full&#8209;Service Pathway or Direct Admission Premium package, your fee is fully refunded.</span>
+      <span>© 2026 Eurasia Foundation. American Academic Horizons is a program of Eurasia Foundation. <a href="#/terms" style="color:inherit;text-decoration:underline;">Terms</a> · <a href="#/privacy" style="color:inherit;text-decoration:underline;">Privacy</a></span>
     </div>
   </div>
 </footer>
