@@ -196,6 +196,22 @@
     border-radius:3px;font-size:14.5px;color:var(--ink-soft);max-width:74ch;
   }
 
+  .guarantee-badge{
+    display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;
+    color:var(--gold-deep);border:1px solid var(--gold);border-radius:999px;padding:5px 12px;
+  }
+  .guarantee-box{
+    margin-top:40px;padding:26px 28px;background:var(--paper);border:1.5px solid var(--gold);
+    border-radius:6px;box-shadow:var(--shadow);max-width:78ch;
+  }
+  .guarantee-box .gb-head{display:flex;align-items:center;gap:12px;}
+  .guarantee-box h3{font-size:17px;}
+  .guarantee-box p{margin-top:12px;font-size:15px;color:var(--ink-soft);line-height:1.6;}
+  .guarantee-box .gb-scope{margin-top:14px;font-size:13px;color:var(--muted);}
+  .guarantee-box .gb-scope a{color:var(--navy);font-weight:600;text-decoration:none;}
+  .guarantee-box .gb-scope a:hover{text-decoration:underline;}
+
   /* ---------- phase list / partners ---------- */
   .phase-list{display:flex;flex-direction:column;gap:22px;margin-top:40px;}
   .phase-row{display:flex;gap:24px;align-items:baseline;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line);}
@@ -278,7 +294,15 @@
   .narrative p:first-of-type{margin-top:0;}
   .narrative .lead-q{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;color:var(--ink);line-height:1.35;margin-top:0;text-wrap:balance;}
   .narrative h2{font-size:20px;margin-top:48px;margin-bottom:2px;color:var(--navy);}
+  .narrative h3{font-size:16px;margin-top:28px;margin-bottom:0;color:var(--ink);}
   .narrative strong{color:var(--ink);font-weight:600;}
+  .narrative ul{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+  .narrative ul li{padding-left:20px;position:relative;color:var(--ink-soft);font-size:16px;line-height:1.6;}
+  .narrative ul li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .narrative .updated{
+    display:inline-block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;
+    color:var(--muted);letter-spacing:.03em;
+  }
 
   .priority-check{
     margin-top:56px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:32px;
@@ -496,6 +520,7 @@
             <li>We manage 3 applications for you</li>
             <li>Community college credential or a 2+2 transfer route</li>
             <li>6 advising sessions</li>
+            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
           </ul>
           <span class="best">Best for cost&#8209;conscious families, or students with a clear field of study in mind.</span>
         </div>
@@ -507,6 +532,7 @@
             <li>We manage 3 applications for you</li>
             <li>Direct four&#8209;year admission, no mid&#8209;degree transfer</li>
             <li>8 advising sessions + essay coaching</li>
+            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
           </ul>
           <span class="best">Best for academically&#8209;ready students who want one continuous experience.</span>
         </div>
@@ -609,6 +635,7 @@
             <li>Visa interview prep and ongoing communication with your college, included</li>
             <li>90 days of on&#8209;campus support after enrollment</li>
             <li>If you choose the 2+2 route: built around CA (CC→UC/CSU), WA (Direct Transfer Agreement), TX (statewide core) &amp; MA (MassTransfer); year&#8209;two transfer support priced separately</li>
+            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
           </ul>
           <span class="best">Best for cost&#8209;conscious families, or students with a clear field of study already in mind. <a href="#what-is-2plus2" style="color:var(--navy);font-weight:600;">What's a 2+2, exactly? →</a></span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
@@ -624,6 +651,7 @@
             <li>Visa interview prep and ongoing communication with your university, included</li>
             <li>90 days of on&#8209;campus support after enrollment</li>
             <li>Scholarship identification (never guaranteed) · requires 6–12 months lead time before intake</li>
+            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
           </ul>
           <span class="best">Best for academically&#8209;ready students who want one continuous experience.</span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
@@ -641,6 +669,15 @@
           </ul>
           <a class="card-cta" href="#/families">Book yours →</a>
         </div>
+      </div>
+
+      <div class="guarantee-box">
+        <div class="gb-head">
+          <span class="guarantee-badge">✓ Money&#8209;back guarantee</span>
+        </div>
+        <h3 style="margin-top:12px;">If it doesn't work out, you don't pay for it.</h3>
+        <p>We can't guarantee admission or a visa — no one honestly can. What we can guarantee: if you complete a <b>Full&#8209;Service Pathway</b> or <b>Direct Admission Premium</b> package and aren't admitted to any institution you applied to through us, or you attend your visa interview and aren't issued a visa, we refund your program fee in full.</p>
+        <p class="gb-scope">Applies to Full&#8209;Service Pathway and Direct Admission Premium only — Pathway Starter is advice&#8209;only with no applications submitted, so it isn't eligible. See the <a href="#/terms">Terms of Service</a> for the full refund policy.</p>
       </div>
 
       <div class="compare-table-wrap">
@@ -670,7 +707,7 @@
         </div>
       </div>
 
-      <div class="disclosure">We provide education, preparation and honest advising — not guarantees. College placement fees are billed to partner institutions once a student enrolls, never added to your family's price.</div>
+      <div class="disclosure">We can't guarantee an admission decision or a visa outcome — those belong to the college and the U.S. government, not to us. Our money&#8209;back guarantee covers what we can promise: if either doesn't go your way, you don't pay for the attempt. College placement fees are billed to partner institutions once a student enrolls, never added to your family's price.</div>
     </div>
   </div>
 </section>
@@ -847,16 +884,15 @@
       <p class="sec-sub measure">American Academic Horizons is Eurasia Foundation's newest initiative — the same organization, thirty years in, turning toward a new kind of doorway.</p>
 
       <div class="timeline">
-        <div class="t-stop"><i></i><span class="yr">1994</span><span class="d">Eurasia Foundation founded</span></div>
-        <div class="t-stop"><i></i><span class="yr">2000s</span><span class="d">Civic &amp; governance programs across Eurasia</span></div>
-        <div class="t-stop"><i></i><span class="yr">2010s</span><span class="d">Entrepreneurship &amp; youth leadership initiatives</span></div>
-        <div class="t-stop"><i></i><span class="yr">2020s</span><span class="d">Digital transformation &amp; social innovation</span></div>
+        <div class="t-stop"><i></i><span class="yr">1992</span><span class="d">Eurasia Foundation founded</span></div>
+        <div class="t-stop"><i></i><span class="yr">2007</span><span class="d">Transformation into an international NGO</span></div>
+        <div class="t-stop"><i></i><span class="yr">2019</span><span class="d">Expansion of our projects in Central Asia</span></div>
         <div class="t-stop"><i></i><span class="yr">2026</span><span class="d">American Academic Horizons launches</span></div>
       </div>
 
       <div style="margin-top:64px;max-width:70ch;">
         <h2 style="font-size:22px;">Why a foundation is doing this.</h2>
-        <p style="margin-top:14px;color:var(--ink-soft);font-size:16px;">For thirty years, Eurasia Foundation has worked directly in the communities it serves — not as a distant funder, but as a partner on the ground. American Academic Horizons grew out of a simple observation: talented students across Central Asia have real paths to U.S. colleges, and smaller U.S. colleges have real room for them, but almost nobody is connecting the two honestly. So we built the connection ourselves, using the same standards of transparency and accountability that have defined our work since 1994.</p>
+        <p style="margin-top:14px;color:var(--ink-soft);font-size:16px;">Eurasia Foundation is a non&#8209;profit international development organization dedicated to engaging citizens and empowering communities globally. For over three decades, we've worked directly in the communities we serve — not as a distant funder, but as a partner on the ground. That commitment expanded into Central Asia in 2019, reaching Kazakhstan, Tajikistan, Turkmenistan, and Uzbekistan with locally led development work. American Academic Horizons grew out of a simple observation from that work: talented students across Central Asia have real paths to U.S. colleges, and smaller U.S. colleges have real room for them, but almost nobody is connecting the two honestly. So we built the connection ourselves, using the same standards of transparency and accountability that have defined our work since 1992.</p>
         <p style="margin-top:14px;font-size:15px;"><a href="https://eurasia.org" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold);">See Eurasia Foundation's full history and current programs at eurasia.org ↗</a></p>
       </div>
 
@@ -874,6 +910,92 @@
       <h2>Ready to talk to an advisor?</h2>
       <p>Start with a free, no&#8209;obligation consultation — the same first step every family takes.</p>
       <div class="ctas"><a class="cta-btn" href="#/families">Book Your Free Consultation</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TERMS ============ -->
+<section class="route" data-route="terms" aria-labelledby="terms-h1">
+  <div class="band tight">
+    <div class="wrap" style="max-width:740px;">
+      <span class="eyebrow">Legal</span>
+      <h1 id="terms-h1" style="font-size:clamp(26px,3.6vw,38px);margin-top:12px;">Terms of Service</h1>
+      <span class="updated" style="display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);">Last updated: September 2026</span>
+
+      <div class="narrative" style="margin-top:32px;">
+        <p>These terms cover your use of American Academic Horizons' advising services and this website. By booking a consultation or purchasing a package, you agree to them.</p>
+
+        <h2>Our services</h2>
+        <p>We provide college matching, application preparation, document review, and advising sessions, at the level described in the package you purchase. We prepare your application as strongly as we can — but admission and visa decisions are made by colleges, universities, and the U.S. government, not by us.</p>
+
+        <h2>Pricing and payment</h2>
+        <p>Package fees cover our advising services only. Tuition, application fees paid directly to a college or university, visa fees, housing deposits, and living costs are separate, are paid directly to those institutions or agencies, and are not included in or refundable through us.</p>
+
+        <h2>Money&#8209;back guarantee</h2>
+        <p>If you purchase a <strong>Full&#8209;Service Pathway</strong> or <strong>Direct Admission Premium</strong> package, we guarantee a full refund of your program fee if either of the following happens:</p>
+        <ul>
+          <li>You are not admitted to any of the institutions we submitted an application to on your behalf, or</li>
+          <li>You attend your visa interview and are not issued a visa.</li>
+        </ul>
+        <p>To request a refund, contact your advisor within 30 days of receiving the final admission decision or your visa interview outcome. Refunds are issued to the original payment method within 10 business days of approval.</p>
+        <h3>What this guarantee does not cover</h3>
+        <ul>
+          <li><strong>Pathway Starter</strong> is advice&#8209;only — no applications are submitted on your behalf — so it is not eligible for this guarantee.</li>
+          <li><strong>Complimentary Consultation</strong> is free and carries no fee to refund.</li>
+          <li>Third&#8209;party costs (application fees, tuition, visa fees, housing deposits) are not covered, since we do not control or collect them.</li>
+          <li>The guarantee does not apply if a family withdraws an application, misses a required deadline, or provides incomplete or inaccurate information after being advised otherwise.</li>
+        </ul>
+
+        <h2>No guarantee of outcomes beyond this policy</h2>
+        <p>Outside of the money&#8209;back guarantee above, we do not and cannot promise admission, a visa, transfer credit, scholarships, or any other outcome controlled by a third party. If a claim like that appears anywhere else on this site, this policy governs.</p>
+
+        <h2>Changes to these terms</h2>
+        <p>We may update these terms as our services or partner agreements change. Material changes will be posted here with a new "last updated" date.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about these terms can be raised with your advisor during your free consultation, or through the <a href="#/families" style="color:var(--navy);font-weight:600;">Families &amp; FAQ</a> page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section class="route" data-route="privacy" aria-labelledby="privacy-h1">
+  <div class="band tight">
+    <div class="wrap" style="max-width:740px;">
+      <span class="eyebrow">Legal</span>
+      <h1 id="privacy-h1" style="font-size:clamp(26px,3.6vw,38px);margin-top:12px;">Privacy Policy</h1>
+      <span class="updated" style="display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);">Last updated: September 2026</span>
+
+      <div class="narrative" style="margin-top:32px;">
+        <p>This page explains what information we collect, why, and how you can control it.</p>
+
+        <h2>Information we collect</h2>
+        <ul>
+          <li>Contact details you give us: name, email, country, and phone number.</li>
+          <li>Information you share during advising: academic history, goals, and family circumstances relevant to finding the right pathway.</li>
+          <li>Documents you upload for an application: transcripts, test scores, essays, and financial documentation.</li>
+          <li>Basic usage data about this website (pages visited, general location by country) to understand how families use it.</li>
+        </ul>
+
+        <h2>How we use it</h2>
+        <p>We use your information to provide advising, prepare and submit applications on your behalf, communicate with you about your case, and improve our services. We do not sell your information to anyone.</p>
+
+        <h2>Sharing with partner institutions</h2>
+        <p>When you apply through us, we share the documents and information required for that application with the specific college or university you're applying to — and only what that application requires. We do not share your information with institutions you haven't chosen to apply to.</p>
+
+        <h2>Data retention</h2>
+        <p>We keep your information for as long as needed to provide our services and to meet our own record&#8209;keeping obligations, and delete it when it's no longer needed for either.</p>
+
+        <h2>Your rights</h2>
+        <p>You can ask to see what information we hold about you, correct it, or request that we delete it, by contacting your advisor or through the <a href="#/families" style="color:var(--navy);font-weight:600;">Families &amp; FAQ</a> page. We'll respond within a reasonable time.</p>
+
+        <h2>Cookies and analytics</h2>
+        <p>This site uses basic analytics to understand traffic and improve the experience. It does not use advertising trackers or sell data to third&#8209;party advertisers.</p>
+
+        <h2>Contact</h2>
+        <p>Privacy questions can be raised with your advisor, or through the <a href="#/families" style="color:var(--navy);font-weight:600;">Families &amp; FAQ</a> page.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -902,24 +1024,28 @@
       <div>
         <h4>Start</h4>
         <a href="#/families">Book Free Consultation</a>
+        <a href="#/terms">Terms of Service</a>
+        <a href="#/privacy">Privacy Policy</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Eurasia Foundation. American Academic Horizons is a program of Eurasia Foundation.</span>
-      <span>We provide education, preparation and honest advising — not guarantees.</span>
+      <span>© 2026 Eurasia Foundation. American Academic Horizons is a program of Eurasia Foundation. <a href="#/terms" style="color:inherit;text-decoration:underline;">Terms</a> · <a href="#/privacy" style="color:inherit;text-decoration:underline;">Privacy</a></span>
+      <span>Admission and visa decisions aren't ours to make — but if either doesn't go your way on a Full&#8209;Service Pathway or Direct Admission Premium package, your fee is fully refunded.</span>
     </div>
   </div>
 </footer>
 
 <script>
 (function(){
-  var routes = ['home','pathways','where-you-can-study','families','about'];
+  var routes = ['home','pathways','where-you-can-study','families','about','terms','privacy'];
   var titles = {
     'home':'American Academic Horizons — Eurasia Foundation',
     'pathways':'Pathways & Pricing — American Academic Horizons',
     'where-you-can-study':'Where You Can Study — American Academic Horizons',
     'families':'Families & FAQ — American Academic Horizons',
-    'about':'About Eurasia Foundation — American Academic Horizons'
+    'about':'About Eurasia Foundation — American Academic Horizons',
+    'terms':'Terms of Service — American Academic Horizons',
+    'privacy':'Privacy Policy — American Academic Horizons'
   };
   var sections = document.querySelectorAll('section.route');
   var navLinks = document.querySelectorAll('nav.primary a[data-route]');
