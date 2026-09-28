@@ -154,13 +154,13 @@
   .hero-art .stage[aria-pressed="true"] .node.flag rect,.hero-art .stage[aria-pressed="true"] .node.flag circle{filter:drop-shadow(0 0 2px rgba(201,138,31,.7));}
   .hero-art .stage[aria-pressed="true"] .label{fill:var(--ink);font-weight:600;}
   .hero-art .stage:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
-  .hero-art .pulse-wrap circle{animation:hero-travel 4.5s ease-in-out infinite;}
+  .hero-art .pulse-wrap circle{animation:hero-travel 6s ease-in-out infinite;}
   @media (prefers-reduced-motion: reduce){.hero-art .pulse-wrap{display:none;}}
   @keyframes hero-travel{
     0%{ transform:translateX(0); opacity:0; }
     6%{ opacity:1; }
     94%{ opacity:1; }
-    100%{ transform:translateX(300px); opacity:0; }
+    100%{ transform:translateX(420px); opacity:0; }
   }
   .hero-detail{
     margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);min-height:52px;
@@ -440,7 +440,7 @@
       <div>
         <span class="eyebrow" style="letter-spacing:.02em;">Pathways to a U.S. Degree</span>
         <h1 id="home-h1">Your path to a U.S. degree, mapped, explained, and guided.</h1>
-        <p class="lede">Talented students deserve a trustworthy path into U.S. higher education, with any level of support your family needs, from a free consultation to end‑to‑end guidance through application and arrival.</p>
+        <p class="lede">Talented students deserve a trustworthy path into U.S. higher education. We offer whatever level of support your family needs — from a free consultation to full support all the way through application and arrival.</p>
         <div class="ctas">
           <a class="cta-btn" href="#/families">Book a Free Consultation</a>
           <a class="cta-btn secondary" href="#/pathways">See Pathways &amp; Pricing</a>
@@ -452,60 +452,70 @@
         </div>
       </div>
       <div class="hero-art">
-        <svg viewBox="0 0 490 200">
-          <path d="M40 55 L40 45 L340 45 L340 55" fill="none" stroke="#5C6B78" stroke-width="1.2"/>
-          <text x="190" y="26" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="0.04em" fill="#3C4A56" font-weight="600">AS MUCH SUPPORT AS YOU NEED</text>
+        <svg viewBox="0 0 640 200">
+          <path d="M40 55 L40 45 L485 45 L485 55" fill="none" stroke="#5C6B78" stroke-width="1.2"/>
+          <text x="262" y="26" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="0.04em" fill="#3C4A56" font-weight="600">AS MUCH SUPPORT AS YOU NEED</text>
 
-          <line x1="40" y1="115" x2="340" y2="115" stroke="#003A70" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="115" x2="460" y2="115" stroke="#003A70" stroke-width="3" stroke-linecap="round"/>
           <g class="pulse-wrap"><circle cx="40" cy="115" r="4" fill="#F8C744"/></g>
-          <line x1="373" y1="115" x2="450" y2="115" stroke="#8B99A3" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
+          <line x1="495" y1="115" x2="560" y2="115" stroke="#8B99A3" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
 
-          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="conversation" data-title="Conversation" data-detail="A free 30&#8209;minute call to learn your options — no obligation, one per family.">
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="inquiry" data-title="Inquiry &amp; Awareness" data-detail="Free information and a no&#8209;obligation first conversation — no cost to start.">
             <circle class="hit" cx="40" cy="115" r="18"/>
             <circle class="node" cx="40" cy="115" r="8" fill="#003A70" stroke="#003A70" stroke-width="2.5"/>
-            <text class="label" x="40" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">CONVERSATION</text>
+            <text class="label" x="40" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">INQUIRY</text>
           </g>
-          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="application" data-title="Application" data-detail="We manage your applications and prepare every document, from transcripts to essays.">
-            <circle class="hit" cx="143" cy="115" r="18"/>
-            <circle class="node" cx="143" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-            <text class="label" x="143" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">APPLICATION</text>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="discovery" data-title="Discovery &amp; Fit" data-detail="We look at your record and goals to see which pathway actually fits — and say so honestly if none of them do.">
+            <circle class="hit" cx="124" cy="115" r="18"/>
+            <circle class="node" cx="124" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="124" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">DISCOVERY</text>
           </g>
-          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="enrollment" data-title="Enrollment &amp; Visa" data-detail="Visa interview prep and ongoing communication with your college or university, included.">
-            <circle class="hit" cx="247" cy="115" r="18"/>
-            <circle class="node" cx="247" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-            <text class="label" x="247" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ENROLLMENT &amp; VISA</text>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="pathway-design" data-title="Pathway Design" data-detail="We map your route and show you the real price before you commit to anything.">
+            <circle class="hit" cx="208" cy="115" r="18"/>
+            <circle class="node" cx="208" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="208" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">PATHWAY</text>
           </g>
-          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="arrival" data-title="Arrival" data-detail="90 days of on&#8209;campus support after you enroll — we don't disappear once you're admitted.">
-            <circle class="hit" cx="356" cy="103" r="23"/>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="application" data-title="Application &amp; Offer" data-detail="We manage your applications and prepare every document, from transcripts to essays.">
+            <circle class="hit" cx="292" cy="115" r="18"/>
+            <circle class="node" cx="292" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="292" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">APPLICATION</text>
+          </g>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="visa" data-title="Visa Readiness" data-detail="Visa interview prep and ongoing communication with your college or university, included.">
+            <circle class="hit" cx="376" cy="115" r="18"/>
+            <circle class="node" cx="376" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
+            <text class="label" x="376" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">VISA</text>
+          </g>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="arrival" data-title="Arrival &amp; First Term" data-detail="90 days of on&#8209;campus support after you enroll — we don't disappear once you're admitted.">
+            <circle class="hit" cx="466" cy="103" r="23"/>
             <g class="node flag">
-              <line x1="341" y1="106" x2="341" y2="115" stroke="#5C6B78" stroke-width="2" stroke-linecap="round"/>
-              <rect x="341" y="87" width="30" height="19" fill="#fff" stroke="#D8D4C4" stroke-width="0.5"/>
-              <rect x="341" y="87" width="30" height="2.1" fill="#B22234"/>
-              <rect x="341" y="91.3" width="30" height="2.1" fill="#B22234"/>
-              <rect x="341" y="95.6" width="30" height="2.1" fill="#B22234"/>
-              <rect x="341" y="99.9" width="30" height="2.1" fill="#B22234"/>
-              <rect x="341" y="104.2" width="30" height="1.8" fill="#B22234"/>
-              <rect x="341" y="87" width="13" height="10.5" fill="#3C3B6E"/>
-              <circle cx="344.5" cy="89.5" r="0.7" fill="#fff"/>
-              <circle cx="349" cy="89.5" r="0.7" fill="#fff"/>
-              <circle cx="353.5" cy="89.5" r="0.7" fill="#fff"/>
-              <circle cx="346.7" cy="92.5" r="0.7" fill="#fff"/>
-              <circle cx="351.2" cy="92.5" r="0.7" fill="#fff"/>
-              <circle cx="344.5" cy="95.5" r="0.7" fill="#fff"/>
-              <circle cx="349" cy="95.5" r="0.7" fill="#fff"/>
+              <line x1="451" y1="106" x2="451" y2="115" stroke="#5C6B78" stroke-width="2" stroke-linecap="round"/>
+              <rect x="451" y="87" width="30" height="19" fill="#fff" stroke="#D8D4C4" stroke-width="0.5"/>
+              <rect x="451" y="87" width="30" height="2.1" fill="#B22234"/>
+              <rect x="451" y="91.3" width="30" height="2.1" fill="#B22234"/>
+              <rect x="451" y="95.6" width="30" height="2.1" fill="#B22234"/>
+              <rect x="451" y="99.9" width="30" height="2.1" fill="#B22234"/>
+              <rect x="451" y="104.2" width="30" height="1.8" fill="#B22234"/>
+              <rect x="451" y="87" width="13" height="10.5" fill="#3C3B6E"/>
+              <circle cx="454.5" cy="89.5" r="0.7" fill="#fff"/>
+              <circle cx="459" cy="89.5" r="0.7" fill="#fff"/>
+              <circle cx="463.5" cy="89.5" r="0.7" fill="#fff"/>
+              <circle cx="456.7" cy="92.5" r="0.7" fill="#fff"/>
+              <circle cx="461.2" cy="92.5" r="0.7" fill="#fff"/>
+              <circle cx="454.5" cy="95.5" r="0.7" fill="#fff"/>
+              <circle cx="459" cy="95.5" r="0.7" fill="#fff"/>
             </g>
-            <text class="label" x="356" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ARRIVAL</text>
+            <text class="label" x="466" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ARRIVAL</text>
           </g>
-          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="transfer" data-title="Transfer (optional)" data-detail="For the 2+2 route: year&#8209;two transfer support to your university, priced separately.">
-            <circle class="hit" cx="460" cy="115" r="18"/>
-            <circle class="node" cx="460" cy="115" r="6" fill="#fff" stroke="#8B99A3" stroke-width="2" stroke-dasharray="2 2"/>
-            <text class="label" x="460" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#8B99A3">TRANSFER</text>
-            <text x="460" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-style="italic" fill="#8B99A3">(optional)</text>
+          <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="transfer" data-title="Transfer &amp; Graduation (optional)" data-detail="For the 2+2 route: we can stay with you through your transfer and track your progress toward graduation, priced separately.">
+            <circle class="hit" cx="580" cy="115" r="18"/>
+            <circle class="node" cx="580" cy="115" r="6" fill="#fff" stroke="#8B99A3" stroke-width="2" stroke-dasharray="2 2"/>
+            <text class="label" x="580" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#8B99A3">TRANSFER</text>
+            <text x="580" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-style="italic" fill="#8B99A3">(optional)</text>
           </g>
         </svg>
         <div class="hero-detail" aria-live="polite">
-          <b id="hero-detail-title">Conversation</b>
-          <span id="hero-detail-text">A free 30&#8209;minute call to learn your options — no obligation, one per family.</span>
+          <b id="hero-detail-title">Inquiry &amp; Awareness</b>
+          <span id="hero-detail-text">Free information and a no&#8209;obligation first conversation — no cost to start.</span>
         </div>
       </div>
     </div>
@@ -528,7 +538,7 @@
           <ul>
             <li>2 advising sessions — college matching &amp; direction</li>
             <li>Advice only, no applications submitted</li>
-            <li>Full credit toward a fuller package within 90 days</li>
+            <li>If you upgrade within 90 days, the $500 counts fully toward your new package</li>
           </ul>
           <span class="best">Best for families who want expert direction before committing further.</span>
         </div>
@@ -540,9 +550,9 @@
             <li>We manage 3 applications for you</li>
             <li>Community college credential or a 2+2 transfer route</li>
             <li>6 advising sessions</li>
-            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
+            <li>Money&#8209;back guarantee if not admitted</li>
           </ul>
-          <span class="best">Best for cost&#8209;conscious families, or students with a clear field of study in mind.</span>
+          <span class="best">Best for families who care about cost, or students with a clear field of study in mind.</span>
         </div>
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
@@ -550,11 +560,11 @@
           <h3>Direct Admission Premium</h3>
           <ul>
             <li>We manage 3 applications for you</li>
-            <li>Direct four&#8209;year admission, no mid&#8209;degree transfer</li>
+            <li>Direct four&#8209;year admission — no need to transfer partway through</li>
             <li>8 advising sessions + essay coaching</li>
-            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
+            <li>Money&#8209;back guarantee if not admitted</li>
           </ul>
-          <span class="best">Best for academically&#8209;ready students who want one continuous experience.</span>
+          <span class="best">Best for students who are ready for direct university study and want one continuous experience.</span>
         </div>
         <div class="pathway-card free">
           <span class="kicker">Start here</span>
@@ -581,7 +591,7 @@
         <a class="link-more" href="#/where-you-can-study">See the full details →</a>
       </div>
       <div class="stat-strip" style="margin-top:32px;">
-        <div class="stat"><b>60+</b><span>Colleges in Eurasia Foundation's broader network</span></div>
+        <div class="stat"><b>60+</b><span>Colleges Eurasia Foundation has worked with over 30 years — not a list you can choose from today</span></div>
       </div>
       <p class="sec-sub measure" style="margin-top:20px;font-size:14.5px;">We're finalizing formal pathway agreements now. Until one is signed, we describe partners by institution type and region — not by name.</p>
     </div>
@@ -590,9 +600,9 @@
   <div class="band panel">
     <div class="wrap">
       <span class="eyebrow">Why families choose us</span>
-      <h2 style="margin-top:10px;">Four things we won't compromise on.</h2>
+      <h2 style="margin-top:10px;">Four things that matter most to us.</h2>
       <div class="pillar-grid">
-        <div class="pillar"><h3>Verify us</h3><p>30 years of public program history, not a claim you have to take on faith.</p></div>
+        <div class="pillar"><h3>Check our history</h3><p>30 years of public program history you can check for yourself.</p></div>
         <div class="pillar"><h3>An affordable, structured path</h3><p>The 2+2 model, built around real state transfer systems.</p></div>
         <div class="pillar"><h3>Pricing you can see</h3><p>Every package priced on this site, before you ever talk to an advisor.</p></div>
         <div class="pillar"><h3>Honest about limits</h3><p>If this isn't the right pathway, we'll say so — and point you elsewhere.</p></div>
@@ -629,7 +639,7 @@
     <div class="wrap">
       <span class="eyebrow">Pathways &amp; Pricing</span>
       <h1 id="pathways-h1" style="font-size:clamp(28px,4vw,42px);margin-top:12px;">Choose the level of support you need — priced up front.</h1>
-      <p class="sec-sub measure">Every package below lists exactly what's included. No number appears only after a phone call.</p>
+      <p class="sec-sub measure">Every package below lists exactly what's included. No number appears only after a phone call. Available to students 18 and older.</p>
 
       <div class="pathway-grid" style="margin-top:48px;">
         <div class="pathway-card">
@@ -639,7 +649,7 @@
           <ul>
             <li>2 advising sessions (45 min): college matching and direction</li>
             <li>Advice only — no applications submitted on your behalf</li>
-            <li>Full credit toward a fuller package if you upgrade within 90 days</li>
+            <li>If you upgrade within 90 days, the $500 counts fully toward your new package</li>
           </ul>
           <span class="best">Best for families who want expert direction before committing to full application support.</span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
@@ -655,9 +665,9 @@
             <li>Visa interview prep and ongoing communication with your college, included</li>
             <li>90 days of on&#8209;campus support after enrollment</li>
             <li>If you choose the 2+2 route: built around CA (CC→UC/CSU), WA (Direct Transfer Agreement), TX (statewide core) &amp; MA (MassTransfer); year&#8209;two transfer support priced separately</li>
-            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
+            <li>Money&#8209;back guarantee if not admitted</li>
           </ul>
-          <span class="best">Best for cost&#8209;conscious families, or students with a clear field of study already in mind. <a href="#what-is-2plus2" style="color:var(--navy);font-weight:600;">What's a 2+2, exactly? →</a></span>
+          <span class="best">Best for families who care about cost, or students with a clear field of study already in mind. <a href="#what-is-2plus2" style="color:var(--navy);font-weight:600;">What's a 2+2, exactly? →</a></span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
         </div>
         <div class="pathway-card">
@@ -666,14 +676,14 @@
           <h3>Direct Admission Premium</h3>
           <ul>
             <li>We manage your applications to 3 partner&#8209;type universities</li>
-            <li>Direct four&#8209;year admission — no mid&#8209;degree transfer</li>
+            <li>Direct four&#8209;year admission — no need to transfer partway through</li>
             <li>8 advising sessions (45 min), including essay &amp; statement&#8209;of&#8209;purpose coaching</li>
             <li>Visa interview prep and ongoing communication with your university, included</li>
             <li>90 days of on&#8209;campus support after enrollment</li>
             <li>Scholarship identification (never guaranteed) · requires 6–12 months lead time before intake</li>
-            <li>Money&#8209;back guarantee if not admitted or visa denied</li>
+            <li>Money&#8209;back guarantee if not admitted</li>
           </ul>
-          <span class="best">Best for academically&#8209;ready students who want one continuous experience.</span>
+          <span class="best">Best for students who are ready for direct university study and want one continuous experience.</span>
           <a class="card-cta" href="#/families">Book a free consultation →</a>
         </div>
         <div class="pathway-card free">
@@ -684,7 +694,7 @@
             <li>One 30&#8209;minute session</li>
             <li><b>Learn</b> your realistic options</li>
             <li><b>Locate</b> a pathway that fits</li>
-            <li><b>Choose</b> a pathway, or we'll share useful resources if we're not a good fit together</li>
+            <li><b>Choose</b> a pathway, or we'll share useful resources if we're not the right choice for your family</li>
             <li>One free session per family</li>
           </ul>
           <a class="card-cta" href="#/families">Book yours →</a>
@@ -696,8 +706,8 @@
           <span class="guarantee-badge">✓ Money&#8209;back guarantee</span>
         </div>
         <h3 style="margin-top:12px;">If it doesn't work out, you don't pay for it.</h3>
-        <p>We can't guarantee admission or a visa — no one honestly can. What we can guarantee: if you complete a <b>Full&#8209;Service Pathway</b> or <b>Direct Admission Premium</b> package and aren't admitted to any institution you applied to through us, or you attend your visa interview and aren't issued a visa, we refund your program fee in full.</p>
-        <p class="gb-scope">Applies to Full&#8209;Service Pathway and Direct Admission Premium only — Pathway Starter is advice&#8209;only with no applications submitted, so it isn't eligible. See the <a href="#/terms">Terms of Service</a> for the full refund policy.</p>
+        <p>We can't guarantee admission — no one honestly can. What we can guarantee: if you complete a <b>Full&#8209;Service Pathway</b> or <b>Direct Admission Premium</b> package and aren't admitted to any institution you applied to through us, we refund your program fee in full.</p>
+        <p class="gb-scope">Applies to Full&#8209;Service Pathway and Direct Admission Premium only — Pathway Starter is advice&#8209;only with no applications submitted, so it isn't eligible. Available to students 18 and older. See the <a href="#/terms">Terms of Service</a> for the full refund policy.</p>
       </div>
 
       <div class="compare-table-wrap">
@@ -718,7 +728,7 @@
       <div id="what-is-2plus2" style="margin-top:64px;scroll-margin-top:90px;">
         <span class="eyebrow">What is 2+2?</span>
         <h2 style="margin-top:10px;font-size:24px;">Two colleges, one degree.</h2>
-        <p class="sec-sub measure" style="margin-top:14px;">A 2+2 pathway means two years at a community college, then two years at a four&#8209;year university, finishing the same bachelor's degree. Community colleges are accredited, two&#8209;year U.S. institutions — smaller classes, lower cost, and an easier place to build academic footing before transferring. When credits transfer under a real articulation agreement, the diploma reads as a straight degree from the university. Where a student started isn't on it.</p>
+        <p class="sec-sub measure" style="margin-top:14px;">A 2+2 pathway means two years at a community college, then two years at a four&#8209;year university, finishing the same bachelor's degree. Community colleges are officially recognized, two&#8209;year U.S. schools — smaller classes, lower cost, and a good place to build your skills and confidence before you transfer. When credits transfer under a real credit&#8209;transfer agreement, the diploma reads as a straight degree from the university. Where a student started isn't on it.</p>
         <div class="pillar-grid">
           <div class="pillar"><h3>Cost matters to your family</h3><p>Two years of community college tuition run well below university tuition, without changing the degree at the end.</p></div>
           <div class="pillar"><h3>You need a grade runway</h3><p>A stronger transcript from community college can open doors to a more selective university than direct admission would.</p></div>
@@ -727,7 +737,7 @@
         </div>
       </div>
 
-      <div class="disclosure">We can't guarantee an admission decision or a visa outcome — those belong to the college and the U.S. government, not to us. Our money&#8209;back guarantee covers what we can promise: if either doesn't go your way, you don't pay for the attempt. College placement fees are billed to partner institutions once a student enrolls, never added to your family's price.</div>
+      <div class="disclosure">We can't guarantee an admission decision — that belongs to the college, not to us. Our money&#8209;back guarantee covers what we can promise: if a student isn't admitted anywhere, the family doesn't pay for the attempt. Our packages are available to students 18 and older. College placement fees are billed to partner institutions once a student enrolls, never added to your family's price.</div>
     </div>
   </div>
 </section>
@@ -744,28 +754,28 @@
   <div class="band">
     <div class="wrap" style="max-width:740px;">
       <div class="narrative">
-        <p class="lead-q">Have you ever felt like you were meant to go further than your hometown?</p>
-        <p>Maybe you want a world&#8209;recognized degree that opens doors internationally. Maybe you're looking for access to opportunities you can't find at home. Or maybe you've simply imagined yourself having the American college experience you've seen in movies.</p>
-        <p>Whatever brings you here, your path to studying in the United States starts with a much more important question than "Where should I study?" <strong>What do you want your future to look like?</strong></p>
+        <p class="lead-q">Do you want to study farther from home than most people you know?</p>
+        <p>Maybe you want a degree that is respected around the world. Maybe you want opportunities that are hard to find at home. Or maybe you've seen American college life in movies and want to experience it yourself.</p>
+        <p>Whatever your reason, the first question is not "Where should I study?" It is: <strong>what do you want your future to look like?</strong></p>
 
         <h2>There is more than one path</h2>
-        <p>Where are you in your education today? How strong is your academic record? What have you done outside the classroom? What do you want to study, and what would you like to do afterward?</p>
-        <p>Your answers help determine the path that makes the most sense for you.</p>
-        <p>U.S. higher education offers many possibilities. You might begin at a community college and earn an associate degree, choose a specialized career&#8209;focused program, or use community college as an affordable pathway to transfer to a four&#8209;year institution. You might apply directly to a college or university for the full four&#8209;year undergraduate experience. And later, graduate and professional programs can take your education even further.</p>
-        <p><strong>There isn't one right route. There is a route that is right for you.</strong></p>
+        <p>Where are you in your studies right now? How strong are your grades? What have you done outside of class? What do you want to study, and what do you want to do after?</p>
+        <p>Your answers help us find the right path for you.</p>
+        <p>There are many options in the United States. You could start at a community college and earn a two&#8209;year degree. You could choose a program focused on one career. You could use community college as an affordable way to transfer into a four&#8209;year university. Or you could apply directly to a university for a full four&#8209;year degree. Later, you could continue with a graduate degree too.</p>
+        <p><strong>There is no single right path. There is only the path that is right for you.</strong></p>
 
         <h2>Now imagine where you would be happiest</h2>
-        <p>Choosing a university isn't only about rankings and academics. You will be building a life there, too.</p>
-        <p>Would you thrive at a large university with 50,000 students, major sports, hundreds of student organizations, and something happening every day? Or would you feel more comfortable at a smaller college where professors know your name and the campus feels like a close community?</p>
-        <p>Can you picture yourself studying in the middle of a major city surrounded by people from all over the world? Or would you rather experience life in a smaller American college town?</p>
-        <p>Would you love to live near the ocean? Experience four distinct seasons? See snow for the first time? Or spend your college years somewhere warm and sunny all year round?</p>
-        <p>And what else matters to you — campus life, sports, research opportunities, internships, safety, cost, cultural diversity, proximity to an airport, or having an international community nearby?</p>
+        <p>Choosing a university is not only about rankings. You will also build your life there.</p>
+        <p>Do you want a big university with 50,000 students, sports teams, and hundreds of clubs? Or a smaller college where teachers know your name?</p>
+        <p>Do you want to live in a big city with people from all over the world? Or in a smaller American college town?</p>
+        <p>Do you want to live near the ocean? See snow for the first time? Or stay somewhere warm all year?</p>
+        <p>What else matters to you? Think about campus life, sports, safety, cost, other international students, and how close the airport is.</p>
 
         <h2>Your priorities become part of the search</h2>
-        <p>We look at the whole picture: your academics, interests, career goals, budget, preferred environment, and the kind of experience you want to have.</p>
-        <p>Then we help you explore institutions and pathways where those pieces come together.</p>
-        <p>Because finding the right fit means more than getting admitted. We want you to find a place where you can succeed academically, move toward the career you envision, build relationships, experience life in the United States, and genuinely enjoy the years you spend there.</p>
-        <p><strong>Your U.S. education should fit your ambitions, your circumstances, and you.</strong></p>
+        <p>We look at the whole picture: your grades, interests, career goals, budget, and the kind of place you want to be.</p>
+        <p>Then we help you find colleges and pathways that match what you want.</p>
+        <p>Finding the right college means more than just getting in. We want you to do well in your classes, move toward the career you want, make friends, and truly enjoy your years there.</p>
+        <p><strong>Your U.S. education should fit you — your goals, your situation, and who you are.</strong></p>
       </div>
 
       <div class="priority-check">
@@ -790,7 +800,7 @@
       <span class="eyebrow">Backed by a real network</span>
       <h2 style="margin-top:10px;font-size:24px;">A growing network of U.S. colleges.</h2>
       <div class="stat-strip" style="margin-top:32px;">
-        <div class="stat"><b>60+</b><span>Colleges in Eurasia Foundation's broader network</span></div>
+        <div class="stat"><b>60+</b><span>Colleges Eurasia Foundation has worked with over 30 years — not a list you can choose from today</span></div>
       </div>
       <p class="sec-sub measure" style="margin-top:20px;font-size:14.5px;">We're finalizing formal pathway agreements now. Until one is signed, we describe partners by institution type and region — not by name.</p>
       <p class="sec-sub measure" style="margin-top:28px;">Have a college in mind that isn't in our network yet? Let us know and we'll reach out on your behalf.</p>
@@ -817,11 +827,11 @@
           </select>
         </div>
         <div>
-          <label for="calc-tier">Family financial planning stage</label>
+          <label for="calc-tier">Where you are in planning</label>
           <select id="calc-tier">
             <option value="early">Just starting to plan</option>
-            <option value="ready" selected>Ready to budget this year</option>
-            <option value="aid">Exploring financial aid options</option>
+            <option value="ready" selected>Ready to plan costs this year</option>
+            <option value="aid">Looking into financial aid</option>
           </select>
         </div>
         <div class="result">
@@ -834,6 +844,10 @@
         <details open>
           <summary>Who decides if my student is admitted?<span class="who">Decided by: the college</span><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6"/></svg></summary>
           <div class="a">We prepare the application, transcripts, and supporting materials — but the college's admissions office makes the call.</div>
+        </details>
+        <details>
+          <summary>Is there an age requirement?<span class="who">Decided by: us</span><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6"/></svg></summary>
+          <div class="a">Yes — our services, including the free consultation, are for students who are 18 or older.</div>
         </details>
         <details>
           <summary>Who decides on the visa?<span class="who">Decided by: the consulate</span><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6"/></svg></summary>
@@ -849,7 +863,7 @@
         </details>
         <details>
           <summary>What does Eurasia Foundation decide?<span class="who">Decided by: us</span><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6"/></svg></summary>
-          <div class="a">Whether a pathway is the right fit for your student. If it isn't, we'll say so — and point you toward one that is, even if that means EducationUSA instead of us.</div>
+          <div class="a">Whether a pathway is right for your student. If it isn't, we'll say so — and point you toward one that is, even if that means EducationUSA instead of us.</div>
         </details>
         <details>
           <summary>What happens if we're told "no" somewhere along the way?<span class="who">Decided by: varies</span><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6"/></svg></summary>
@@ -917,7 +931,7 @@
       </div>
 
       <div class="pillar-grid">
-        <div class="pillar"><h3>Verify us</h3><p>30 years of public program history, not a claim you have to take on faith.</p></div>
+        <div class="pillar"><h3>Check our history</h3><p>30 years of public program history you can check for yourself.</p></div>
         <div class="pillar"><h3>An affordable, structured path</h3><p>The 2+2 model, built around real state transfer systems.</p></div>
         <div class="pillar"><h3>Pricing you can see</h3><p>Every package priced on this site, before you ever talk to an advisor.</p></div>
         <div class="pillar"><h3>Honest about limits</h3><p>If this isn't the right pathway, we'll say so — and point you elsewhere.</p></div>
@@ -945,6 +959,9 @@
       <div class="narrative" style="margin-top:32px;">
         <p>These terms cover your use of American Academic Horizons' advising services and this website. By booking a consultation or purchasing a package, you agree to them.</p>
 
+        <h2>Who can use our services</h2>
+        <p>Our services, including the free consultation, are for students who are 18 years of age or older. We are not able to advise or accept payment on behalf of a student under 18.</p>
+
         <h2>Our services</h2>
         <p>We provide college matching, application preparation, document review, and advising sessions, at the level described in the package you purchase. We prepare your application as strongly as we can — but admission and visa decisions are made by colleges, universities, and the U.S. government, not by us.</p>
 
@@ -952,25 +969,23 @@
         <p>Package fees cover our advising services only. Tuition, application fees paid directly to a college or university, visa fees, housing deposits, and living costs are separate, are paid directly to those institutions or agencies, and are not included in or refundable through us.</p>
 
         <h2>Money&#8209;back guarantee</h2>
-        <p>If you purchase a <strong>Full&#8209;Service Pathway</strong> or <strong>Direct Admission Premium</strong> package, we guarantee a full refund of your program fee if either of the following happens:</p>
-        <ul>
-          <li>You are not admitted to any of the institutions we submitted an application to on your behalf, or</li>
-          <li>You attend your visa interview and are not issued a visa.</li>
-        </ul>
-        <p>To request a refund, contact your advisor within 30 days of receiving the final admission decision or your visa interview outcome. Refunds are issued to the original payment method within 10 business days of approval.</p>
+        <p>If you purchase a <strong>Full&#8209;Service Pathway</strong> or <strong>Direct Admission Premium</strong> package, we guarantee a full refund of your program fee if you are not admitted to any of the institutions we submitted an application to on your behalf.</p>
+        <p>This guarantee covers admission only. It does not cover a visa being refused after admission — the visa interview is a separate decision made entirely by the U.S. Consulate, after the college has already said yes.</p>
+        <p>To request a refund, contact your advisor within 30 days of receiving the final admission decision. Refunds are issued to the original payment method within 10 business days of approval.</p>
         <h3>What this guarantee does not cover</h3>
         <ul>
+          <li>A visa being refused after admission — see above. If a student is admitted and the visa is later refused, the package is considered delivered.</li>
           <li><strong>Pathway Starter</strong> is advice&#8209;only — no applications are submitted on your behalf — so it is not eligible for this guarantee.</li>
           <li><strong>Complimentary Consultation</strong> is free and carries no fee to refund.</li>
-          <li>Third&#8209;party costs (application fees, tuition, visa fees, housing deposits) are not covered, since we do not control or collect them.</li>
+          <li>Costs paid to other organizations (application fees, tuition, visa fees, housing deposits) are not covered, since we do not control or collect them.</li>
           <li>The guarantee does not apply if a family withdraws an application, misses a required deadline, or provides incomplete or inaccurate information after being advised otherwise.</li>
         </ul>
 
         <h2>No guarantee of outcomes beyond this policy</h2>
-        <p>Outside of the money&#8209;back guarantee above, we do not and cannot promise admission, a visa, transfer credit, scholarships, or any other outcome controlled by a third party. If a claim like that appears anywhere else on this site, this policy governs.</p>
+        <p>Outside of the money&#8209;back guarantee above, we do not and cannot promise admission, a visa, transfer credit, scholarships, or any other outcome that is not ours to decide. If a stronger promise appears anywhere else on this site, it is a mistake — this page states our real policy.</p>
 
         <h2>Changes to these terms</h2>
-        <p>We may update these terms as our services or partner agreements change. Material changes will be posted here with a new "last updated" date.</p>
+        <p>We may update these terms as our services or partner agreements change. Important changes will be posted here with a new "last updated" date.</p>
 
         <h2>Contact</h2>
         <p>Questions about these terms can be raised with your advisor during your free consultation, or through the <a href="#/families" style="color:var(--navy);font-weight:600;">Families &amp; FAQ</a> page.</p>
@@ -993,7 +1008,7 @@
         <h2>Information we collect</h2>
         <ul>
           <li>Contact details you give us: name, email, country, and phone number.</li>
-          <li>Information you share during advising: academic history, goals, and family circumstances relevant to finding the right pathway.</li>
+          <li>Information you share during advising: academic history, goals, and family circumstances that help us find the right pathway.</li>
           <li>Documents you upload for an application: transcripts, test scores, essays, and financial documentation.</li>
           <li>Basic usage data about this website (pages visited, general location by country) to understand how families use it.</li>
         </ul>
@@ -1004,8 +1019,8 @@
         <h2>Sharing with partner institutions</h2>
         <p>When you apply through us, we share the documents and information required for that application with the specific college or university you're applying to — and only what that application requires. We do not share your information with institutions you haven't chosen to apply to.</p>
 
-        <h2>Data retention</h2>
-        <p>We keep your information for as long as needed to provide our services and to meet our own record&#8209;keeping obligations, and delete it when it's no longer needed for either.</p>
+        <h2>How long we keep your information</h2>
+        <p>We keep your information for as long as we need it to provide our services, and delete it once it's no longer needed.</p>
 
         <h2>Your rights</h2>
         <p>You can ask to see what information we hold about you, correct it, or request that we delete it, by contacting your advisor or through the <a href="#/families" style="color:var(--navy);font-weight:600;">Families &amp; FAQ</a> page. We'll respond within a reasonable time.</p>
@@ -1049,7 +1064,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Admission and visa decisions aren't ours to make — but if either doesn't go your way on a Full&#8209;Service Pathway or Direct Admission Premium package, your fee is fully refunded.</span>
+      <span>Admission decisions aren't ours to make — but if a student isn't admitted anywhere on a Full&#8209;Service Pathway or Direct Admission Premium package, your fee is fully refunded. Available to students 18 and older.</span>
       <span>© 2026 Eurasia Foundation. American Academic Horizons is a program of Eurasia Foundation. <a href="#/terms" style="color:inherit;text-decoration:underline;">Terms</a> · <a href="#/privacy" style="color:inherit;text-decoration:underline;">Privacy</a></span>
     </div>
   </div>
@@ -1103,9 +1118,9 @@
   var amt = document.getElementById('calc-amt');
   var note = document.getElementById('calc-note');
   var tierNotes = {
-    early: 'Plenty of time — most families start budgeting 12–18 months before intake.',
-    ready: 'Tuition & living vary by state and college — your advisor confirms exact figures at your free consultation.',
-    aid: 'We\'ll flag colleges with strong need‑based aid during your free consultation.'
+    early: 'You have plenty of time — most families start planning costs 12–18 months before they want to start.',
+    ready: 'Tuition and living costs vary by state and college — your advisor will confirm the exact numbers at your free consultation.',
+    aid: 'We\'ll point you to colleges that offer more financial aid, during your free consultation.'
   };
   function updateCalc(){
     var v = Number(pathwaySel.value);
@@ -1144,5 +1159,6 @@
 })();
 </script>
 
+</body></html>
 </body>
 </html>
