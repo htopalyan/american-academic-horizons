@@ -107,7 +107,6 @@
     .brand .name{font-size:14px;}
     .brand .parent{font-size:8.5px;}
     .site-nav{gap:10px;}
-    .hero-art{padding:18px;}
   }
 
   /* ---------- route sections ---------- */
@@ -147,43 +146,6 @@
   .ss-arrow:hover{background:rgba(255,255,255,.92);}
   @media (hover:none){.ss-arrow{opacity:.8;width:38px;height:38px;}}
   @media (prefers-reduced-motion: reduce){.slide{transition:none;}}
-  .journey-art{max-width:920px;margin-top:32px;}
-  .hero-art{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:34px;}
-  .hero-art svg{width:100%;height:auto;overflow:visible;}
-  .hero-art .stage{cursor:pointer;}
-  .hero-art .stage .hit{fill:transparent;}
-  .hero-art .stage .node{
-    transform-box:fill-box;transform-origin:center;
-    transition:transform .18s ease,r .15s ease,fill .15s ease,stroke .15s ease;
-  }
-  .hero-art .stage .node.flag{transform-origin:center bottom;}
-  .hero-art .stage .label{
-    transform-box:fill-box;transform-origin:center;
-    transition:fill .15s ease,transform .18s ease;
-  }
-  .hero-art .stage:hover .node,.hero-art .stage:focus-visible .node{stroke-width:3.5;transform:scale(1.35);}
-  .hero-art .stage:hover .label,.hero-art .stage:focus-visible .label{transform:scale(1.15);}
-  .hero-art .stage[aria-pressed="true"] .node{fill:var(--gold);stroke:var(--gold-deep);r:9;}
-  .hero-art .stage[aria-pressed="true"] .node.flag{fill:none;stroke:none;}
-  .hero-art .stage[aria-pressed="true"] .node.flag rect,.hero-art .stage[aria-pressed="true"] .node.flag circle{filter:drop-shadow(0 0 2px rgba(201,138,31,.7));}
-  .hero-art .stage[aria-pressed="true"] .label{fill:var(--ink);font-weight:600;}
-  .hero-art .stage:focus-visible{outline:2px solid var(--navy);outline-offset:3px;}
-  .hero-art .pulse-wrap circle{animation:hero-travel 6s ease-in-out infinite;}
-  @media (prefers-reduced-motion: reduce){.hero-art .pulse-wrap{display:none;}}
-  @keyframes hero-travel{
-    0%{ transform:translateX(0); opacity:0; }
-    6%{ opacity:1; }
-    94%{ opacity:1; }
-    100%{ transform:translateX(420px); opacity:0; }
-  }
-  .hero-detail{
-    margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);min-height:52px;
-  }
-  .hero-detail b{
-    display:block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--gold-deep);margin-bottom:5px;font-weight:600;
-  }
-  .hero-detail span{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
 
   /* ---------- generic section head ---------- */
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
@@ -573,81 +535,6 @@
         <button type="button" class="ss-arrow ss-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button type="button" class="ss-arrow ss-next" aria-label="Next photo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
-    </div>
-  </div>
-
-  <div class="band">
-    <div class="wrap">
-      <span class="eyebrow">Your journey</span>
-      <h2 class="sec-h">From first question to first term, one step at a time.</h2>
-      <p class="sec-sub measure">Hover over or tap a step to see what happens. Take as much support as you need.</p>
-          <div class="hero-art journey-art">
-            <svg viewBox="0 0 640 200">
-              <path d="M40 55 L40 45 L485 45 L485 55" fill="none" stroke="#5C6B78" stroke-width="1.2"/>
-              <text x="262" y="26" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="0.04em" fill="#3C4A56" font-weight="600">AS MUCH SUPPORT AS YOU NEED</text>
-
-              <line x1="40" y1="115" x2="460" y2="115" stroke="#003A70" stroke-width="3" stroke-linecap="round"/>
-              <g class="pulse-wrap"><circle cx="40" cy="115" r="4" fill="#F8C744"/></g>
-              <line x1="495" y1="115" x2="560" y2="115" stroke="#8B99A3" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
-
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="inquiry" data-title="Inquiry &amp; Awareness" data-detail="Free information and a no&#8209;obligation first conversation — no cost to start.">
-                <circle class="hit" cx="40" cy="115" r="18"/>
-                <circle class="node" cx="40" cy="115" r="8" fill="#003A70" stroke="#003A70" stroke-width="2.5"/>
-                <text class="label" x="40" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">INQUIRY</text>
-              </g>
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="discovery" data-title="Discovery &amp; Fit" data-detail="We look at your record and goals to see which pathway actually fits — and say so honestly if none of them do.">
-                <circle class="hit" cx="124" cy="115" r="18"/>
-                <circle class="node" cx="124" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-                <text class="label" x="124" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">DISCOVERY</text>
-              </g>
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="pathway-design" data-title="Pathway Design" data-detail="We map your route and show you the real price before you commit to anything.">
-                <circle class="hit" cx="208" cy="115" r="18"/>
-                <circle class="node" cx="208" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-                <text class="label" x="208" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">PATHWAY</text>
-              </g>
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="application" data-title="Application &amp; Offer" data-detail="We manage your applications and prepare every document, from transcripts to essays.">
-                <circle class="hit" cx="292" cy="115" r="18"/>
-                <circle class="node" cx="292" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-                <text class="label" x="292" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">APPLICATION</text>
-              </g>
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="visa" data-title="Visa Readiness" data-detail="Visa interview prep and ongoing communication with your college or university, included.">
-                <circle class="hit" cx="376" cy="115" r="18"/>
-                <circle class="node" cx="376" cy="115" r="6" fill="#fff" stroke="#003A70" stroke-width="2.5"/>
-                <text class="label" x="376" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">VISA</text>
-              </g>
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="arrival" data-title="Arrival &amp; First Term" data-detail="90 days of on&#8209;campus support after you enroll — we don't disappear once you're admitted.">
-                <circle class="hit" cx="466" cy="103" r="23"/>
-                <g class="node flag">
-                  <line x1="451" y1="106" x2="451" y2="115" stroke="#5C6B78" stroke-width="2" stroke-linecap="round"/>
-                  <rect x="451" y="87" width="30" height="19" fill="#fff" stroke="#D8D4C4" stroke-width="0.5"/>
-                  <rect x="451" y="87" width="30" height="2.1" fill="#B22234"/>
-                  <rect x="451" y="91.3" width="30" height="2.1" fill="#B22234"/>
-                  <rect x="451" y="95.6" width="30" height="2.1" fill="#B22234"/>
-                  <rect x="451" y="99.9" width="30" height="2.1" fill="#B22234"/>
-                  <rect x="451" y="104.2" width="30" height="1.8" fill="#B22234"/>
-                  <rect x="451" y="87" width="13" height="10.5" fill="#3C3B6E"/>
-                  <circle cx="454.5" cy="89.5" r="0.7" fill="#fff"/>
-                  <circle cx="459" cy="89.5" r="0.7" fill="#fff"/>
-                  <circle cx="463.5" cy="89.5" r="0.7" fill="#fff"/>
-                  <circle cx="456.7" cy="92.5" r="0.7" fill="#fff"/>
-                  <circle cx="461.2" cy="92.5" r="0.7" fill="#fff"/>
-                  <circle cx="454.5" cy="95.5" r="0.7" fill="#fff"/>
-                  <circle cx="459" cy="95.5" r="0.7" fill="#fff"/>
-                </g>
-                <text class="label" x="466" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#5C6B78">ARRIVAL</text>
-              </g>
-              <g class="stage" tabindex="0" role="button" aria-pressed="false" data-stage="transfer" data-title="Transfer &amp; Graduation (optional)" data-detail="For the 2+2 route: we can stay with you through your transfer and track your progress toward graduation, priced separately.">
-                <circle class="hit" cx="580" cy="115" r="18"/>
-                <circle class="node" cx="580" cy="115" r="6" fill="#fff" stroke="#8B99A3" stroke-width="2" stroke-dasharray="2 2"/>
-                <text class="label" x="580" y="141" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#8B99A3">TRANSFER</text>
-                <text x="580" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" font-style="italic" fill="#8B99A3">(optional)</text>
-              </g>
-            </svg>
-            <div class="hero-detail" aria-live="polite">
-              <b id="hero-detail-title">Inquiry &amp; Awareness</b>
-              <span id="hero-detail-text">Free information and a no&#8209;obligation first conversation — no cost to start.</span>
-            </div>
-          </div>
     </div>
   </div>
 
@@ -1481,23 +1368,6 @@
     confirm.scrollIntoView({behavior: 'smooth', block: 'nearest'});
   });
 
-  var stages = document.querySelectorAll('.hero-art .stage');
-  var detailTitle = document.getElementById('hero-detail-title');
-  var detailText = document.getElementById('hero-detail-text');
-  function activateStage(stage){
-    stages.forEach(function(s){ s.setAttribute('aria-pressed', s === stage ? 'true' : 'false'); });
-    detailTitle.textContent = stage.dataset.title;
-    detailText.textContent = stage.dataset.detail;
-  }
-  stages.forEach(function(s){
-    s.addEventListener('click', function(){ activateStage(s); });
-    s.addEventListener('mouseenter', function(){ activateStage(s); });
-    s.addEventListener('focus', function(){ activateStage(s); });
-    s.addEventListener('keydown', function(e){
-      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activateStage(s); }
-    });
-  });
-  if(stages.length){ activateStage(stages[0]); }
 })();
 
 /* ---------- hero slideshow ---------- */
