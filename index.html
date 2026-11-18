@@ -468,8 +468,8 @@
 
   /* hero: full-width navy, photo runs to the edge of the screen */
   .hero-band{padding:0;background:var(--navy);color:#fff;border-bottom:6px solid var(--gold);overflow:hidden;}
-  .hero-band .hero{max-width:none;padding:0;gap:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;}
-  .hero-band .hero > div:first-child{padding:68px 44px 64px max(28px, calc((100vw - 1180px)/2 + 28px));}
+  .hero-band .hero{max-width:1600px;margin:0 auto;padding:0;gap:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;}
+  .hero-band .hero > div:first-child{padding:68px 44px 64px max(28px, calc((min(100vw, 1600px) - 1180px)/2 + 28px));}
   .hero-band .eyebrow{color:#fff;}
   .hero-band h1{color:#fff;font-size:clamp(32px,3.7vw,50px);line-height:1.08;letter-spacing:-.018em;margin-top:18px;max-width:16ch;}
   .hero-band .lede{color:#D3DFEC;font-size:19px;max-width:42ch;}
