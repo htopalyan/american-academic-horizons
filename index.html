@@ -134,8 +134,26 @@
   .stat-strip .stat b{display:block;font-family:'Montserrat',sans-serif;font-size:27px;color:var(--navy);}
   .stat-strip .stat span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
 
-  .hero-photo{margin:0;border-radius:6px;overflow:hidden;box-shadow:var(--shadow);background:var(--panel);}
-  .hero-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:35% center;}
+  .slideshow{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);}
+  .slides{position:relative;aspect-ratio:3/2;background:var(--navy-deep);}
+  .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .8s ease;}
+  .slide.is-active{opacity:1;z-index:1;}
+  .slide img{width:100%;height:100%;object-fit:cover;object-position:35% center;display:block;}
+  .slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 14px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px;line-height:1.3;background:linear-gradient(to top,rgba(5,37,72,.82),rgba(5,37,72,0));}
+  .ss-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-top:1px solid var(--line);}
+  .ss-dots{display:flex;gap:4px;flex-wrap:wrap;}
+  .ss-dot{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;position:relative;}
+  .ss-dot::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--line);transition:background .2s ease, transform .2s ease;}
+  .ss-dot:hover::after{background:var(--muted);}
+  .ss-dot[aria-current="true"]::after{background:var(--navy);transform:scale(1.2);}
+  @media (max-width:420px){.ss-dots{gap:0;flex-wrap:nowrap;}.ss-dot{width:22px;}.ss-bar{padding:8px 10px;}}
+  .ss-btns{display:flex;gap:6px;}
+  .ss-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--navy);background:var(--paper);color:var(--navy);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;}
+  .ss-btn:hover{background:var(--navy);color:#fff;}
+  .ss-play .i-play{display:none;}
+  .ss-play.paused .i-play{display:block;}
+  .ss-play.paused .i-pause{display:none;}
+  @media (prefers-reduced-motion: reduce){.slide{transition:none;}}
   .journey-art{max-width:920px;margin-top:32px;}
   .hero-art{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:34px;}
   .hero-art svg{width:100%;height:auto;overflow:visible;}
@@ -532,9 +550,42 @@
           <div class="stat"><b>$0</b><span>To start — free consultation</span></div>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="images/hero-students.jpg" width="1400" height="788" alt="A group of smiling students taking a selfie together in a classroom" fetchpriority="high">
-      </figure>
+      <div class="slideshow" role="region" aria-roledescription="carousel" aria-label="Photos of student life">
+        <div class="slides" aria-live="off">
+          <figure class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 6">
+            <img src="images/hero-classroom-selfie.jpg" width="1400" height="788" alt="A group of smiling students taking a selfie together in a classroom" fetchpriority="high">
+            <figcaption>Study alongside classmates from around the world.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6" aria-hidden="true">
+            <img src="images/hero-brick-campus.jpg" width="1400" height="935" alt="Brick university buildings beside a green lawn and a brick walkway on a sunny day" loading="lazy">
+            <figcaption>Welcoming campuses, built for students.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6" aria-hidden="true">
+            <img src="images/hero-autumn-friends.jpg" width="1400" height="788" alt="Four smiling friends standing together in a park with autumn leaves" loading="lazy">
+            <figcaption>Make friends from your very first week.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6" aria-hidden="true">
+            <img src="images/hero-blue-sky-campus.jpg" width="1400" height="1050" alt="A sunlit campus building and green lawn under a bright blue sky with clouds" loading="lazy">
+            <figcaption>Open, sunny places to learn.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6" aria-hidden="true">
+            <img src="images/hero-lecture-hall.jpg" width="1400" height="788" alt="Smiling students sitting at desks in a university lecture hall" loading="lazy">
+            <figcaption>Classrooms where you are seen and heard.</figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6" aria-hidden="true">
+            <img src="images/hero-lawn-archway.jpg" width="1400" height="935" alt="Students relaxing on a green campus lawn, seen through a brick archway" loading="lazy">
+            <figcaption>Room to relax between classes.</figcaption>
+          </figure>
+        </div>
+        <div class="ss-bar">
+          <div class="ss-dots"></div>
+          <div class="ss-btns">
+            <button type="button" class="ss-btn ss-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="ss-btn ss-play" aria-label="Pause slideshow"><svg class="i-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
+            <button type="button" class="ss-btn ss-next" aria-label="Next photo"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1460,6 +1511,76 @@
     });
   });
   if(stages.length){ activateStage(stages[0]); }
+})();
+
+/* ---------- hero slideshow ---------- */
+(function(){
+  var root = document.querySelector('.slideshow');
+  if(!root){ return; }
+  var slides = [].slice.call(root.querySelectorAll('.slide'));
+  var track = root.querySelector('.slides');
+  var dotsWrap = root.querySelector('.ss-dots');
+  var playBtn = root.querySelector('.ss-play');
+  var idx = 0, timer = null, userPaused = false, hoverPaused = false;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  slides.forEach(function(s, i){
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'ss-dot';
+    d.setAttribute('aria-label', 'Show photo ' + (i + 1) + ' of ' + slides.length);
+    d.addEventListener('click', function(){ go(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots = [].slice.call(dotsWrap.children);
+
+  function go(n){
+    idx = (n + slides.length) % slides.length;
+    slides.forEach(function(s, i){
+      var on = i === idx;
+      s.classList.toggle('is-active', on);
+      s.setAttribute('aria-hidden', on ? 'false' : 'true');
+      dots[i].setAttribute('aria-current', on ? 'true' : 'false');
+    });
+  }
+  function running(){ return timer !== null; }
+  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+  function start(){ if(!timer && !userPaused && !hoverPaused && !reduce){ timer = setInterval(function(){ go(idx + 1); }, 5500); } }
+  function sync(){
+    var playing = !userPaused && !reduce;
+    playBtn.classList.toggle('paused', !playing);
+    playBtn.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
+    track.setAttribute('aria-live', playing ? 'off' : 'polite');
+  }
+  function restart(){ stop(); start(); }
+
+  root.querySelector('.ss-prev').addEventListener('click', function(){ go(idx - 1); restart(); });
+  root.querySelector('.ss-next').addEventListener('click', function(){ go(idx + 1); restart(); });
+  dots.forEach(function(d){ d.addEventListener('click', restart); });
+  playBtn.addEventListener('click', function(){
+    if(reduce){ userPaused = false; reduce = false; } else { userPaused = !userPaused; }
+    if(userPaused){ stop(); } else { start(); }
+    sync();
+  });
+
+  root.addEventListener('mouseenter', function(){ hoverPaused = true; stop(); });
+  root.addEventListener('mouseleave', function(){ hoverPaused = false; start(); });
+  root.addEventListener('focusin', function(){ hoverPaused = true; stop(); });
+  root.addEventListener('focusout', function(){ hoverPaused = false; start(); });
+  document.addEventListener('visibilitychange', function(){ if(document.hidden){ stop(); } else { start(); } });
+
+  var x0 = null;
+  root.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  root.addEventListener('touchend', function(e){
+    if(x0 === null){ return; }
+    var dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    if(Math.abs(dx) > 40){ go(idx + (dx < 0 ? 1 : -1)); restart(); }
+  }, {passive:true});
+
+  go(0);
+  sync();
+  start();
 })();
 </script>
 
