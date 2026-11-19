@@ -384,6 +384,20 @@
   .net-stat b{display:block;font-family:var(--serif);font-weight:800;font-size:64px;line-height:1;color:var(--navy);}
   .net-stat span{display:block;margin-top:10px;max-width:22ch;font-family:'Hind',sans-serif;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
 
+  /* ---------- book page ---------- */
+  .book-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start;}
+  @media (max-width:900px){.book-grid{grid-template-columns:1fr;gap:32px;}}
+  .book-intro h1{margin-top:12px;}
+  .book-intro .lede{font-size:18.5px;color:var(--ink-soft);margin-top:18px;max-width:46ch;}
+  .book-points{margin-top:24px;display:flex;flex-direction:column;gap:10px;}
+  .book-points li{padding-left:22px;position:relative;color:var(--ink-soft);font-size:16px;}
+  .book-points li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;background:var(--gold);}
+  .book-alt{margin-top:26px;font-size:15px;color:var(--ink-soft);}
+  .book-alt a,.book-fallback a{color:var(--navy);font-weight:600;}
+  .book-embed iframe{width:100%;height:720px;border:1px solid var(--line);background:#fff;display:block;}
+  @media (max-width:560px){.book-embed iframe{height:780px;}}
+  .book-fallback{margin-top:12px;font-size:14px;color:var(--muted);}
+
   /* ---------- timeline (about) ---------- */
   .timeline{display:flex;justify-content:space-between;margin-top:56px;position:relative;gap:10px;}
   .timeline::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--line);}
@@ -524,14 +538,14 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.8"/></svg>
         Client Portal
       </a>
-      <a class="cta-btn ghost mobile-cta" href="#/families">Book Free Consultation</a>
+      <a class="cta-btn ghost mobile-cta" href="#/book">Book Free Consultation</a>
     </nav>
     <div class="nav-actions">
       <a class="portal-link" href="#/families">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.8"/></svg>
         Client Portal
       </a>
-      <a class="cta-btn ghost" href="#/families">Book Free Consultation</a>
+      <a class="cta-btn ghost" href="#/book">Book Free Consultation</a>
       <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -550,7 +564,7 @@
         <h1 id="home-h1">Your path to a U.S. degree, mapped, explained, and guided.</h1>
         <p class="lede">Talented students deserve a trustworthy path to U.S. higher education. Get as much support as you need, from a free consultation to full help through arrival.</p>
         <div class="ctas">
-          <a class="cta-btn" href="#/families">Book a Free Consultation</a>
+          <a class="cta-btn" href="#/book">Book a Free Consultation</a>
           <a class="cta-btn secondary" href="#/pathways">See Pathways &amp; Pricing</a>
         </div>
         <div class="stat-strip">
@@ -646,7 +660,7 @@
             <li>Learn → Locate → Choose</li>
             <li>One per family, no obligation</li>
           </ul>
-          <a class="card-cta" href="#/families">Book yours →</a>
+          <a class="card-cta" href="#/book">Book yours →</a>
         </div>
       </div>
     </div>
@@ -698,7 +712,7 @@
       <h2>Start with a free 20&#8209;minute consultation.</h2>
       <p>From that first conversation through college matching, document prep, visa readiness, and 90 days of on&#8209;campus support after you enroll, we're with you at every step. One free consultation per family, no obligation, and we'll always point you toward the pathway that actually fits.</p>
       <div class="ctas">
-        <a class="cta-btn" href="#/families">Book Your Free Consultation</a>
+        <a class="cta-btn" href="#/book">Book Your Free Consultation</a>
       </div>
     </div>
   </div>
@@ -723,7 +737,7 @@
             <li>If you upgrade within 90 days, the $500 counts fully toward your new package</li>
           </ul>
           <span class="best">Best for families who want expert direction before committing to full application support.</span>
-          <a class="card-cta" href="#/families">Book a free consultation →</a>
+          <a class="card-cta" href="#/book">Book a free consultation →</a>
         </div>
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
@@ -739,7 +753,7 @@
             <li>Money&#8209;back guarantee if not admitted</li>
           </ul>
           <span class="best">Best for families who care about cost, or students with a clear field of study already in mind. <a href="#/what-is-2plus2" style="color:var(--navy);font-weight:600;">What's a 2+2, exactly? →</a></span>
-          <a class="card-cta" href="#/families">Book a free consultation →</a>
+          <a class="card-cta" href="#/book">Book a free consultation →</a>
         </div>
         <div class="pathway-card">
           <span class="kicker">Pathway</span>
@@ -755,7 +769,7 @@
             <li>Money&#8209;back guarantee if not admitted</li>
           </ul>
           <span class="best">Best for students who are ready for direct university study and want one continuous experience.</span>
-          <a class="card-cta" href="#/families">Book a free consultation →</a>
+          <a class="card-cta" href="#/book">Book a free consultation →</a>
         </div>
         <div class="pathway-card free">
           <span class="kicker">Start here</span>
@@ -768,7 +782,7 @@
             <li><b>Choose</b> a pathway, or we'll share useful resources if we're not the right choice for your family</li>
             <li>One free session per family</li>
           </ul>
-          <a class="card-cta" href="#/families">Book yours →</a>
+          <a class="card-cta" href="#/book">Book yours →</a>
         </div>
       </div>
 
@@ -896,7 +910,7 @@
     <div class="wrap">
       <h2>Not sure which route fits your student?</h2>
       <p>Start with a free, no&#8209;obligation consultation — we'll help you decide between the 2+2 route and direct admission, honestly.</p>
-      <div class="ctas"><a class="cta-btn" href="#/families">Book Your Free Consultation</a></div>
+      <div class="ctas"><a class="cta-btn" href="#/book">Book Your Free Consultation</a></div>
     </div>
   </div>
 </section>
@@ -912,7 +926,7 @@
           <p class="lede">There is more than one way to earn a U.S. degree, and more than one kind of place to live while you do it. Start with your own goals. We help with the rest.</p>
           <p class="hero-note">There is no single right path. There is only the path that is right for you.</p>
           <div class="ctas">
-            <a class="cta-btn" href="#/families">Book a Free Consultation</a>
+            <a class="cta-btn" href="#/book">Book a Free Consultation</a>
             <a class="cta-btn secondary" href="#study-options">See Your Options</a>
           </div>
         </div>
@@ -950,7 +964,7 @@
             <dt>Time</dt><dd>Usually 1 to 2 years</dd>
             <dt>Good if</dt><dd>You want a lower&#8209;cost start, or training for one career.</dd>
           </dl>
-          <a class="card-cta" href="#/families">Talk to an advisor about this route →</a>
+          <a class="card-cta" href="#/book">Talk to an advisor about this route →</a>
         </article>
 
         <article class="route-card">
@@ -979,7 +993,7 @@
             <dt>Time</dt><dd>About 4 years</dd>
             <dt>Good if</dt><dd>You are ready for university study and want one continuous experience.</dd>
           </dl>
-          <a class="card-cta" href="#/families">Talk to an advisor about this route →</a>
+          <a class="card-cta" href="#/book">Talk to an advisor about this route →</a>
         </article>
       </div>
       <p class="grid-note">Want to go further? After any of these routes, you can continue to a graduate degree. Not sure which route fits? That is what the free consultation is for.</p>
@@ -1036,7 +1050,7 @@
           <label><input type="checkbox"> Location</label>
           <label><input type="checkbox"> Something else</label>
         </div>
-        <a class="cta-btn" href="#/families">Explore My Path</a>
+        <a class="cta-btn" href="#/book">Explore My Path</a>
       </div>
     </div>
   </div>
@@ -1073,7 +1087,7 @@
         <div>
           <p class="sec-sub measure" style="margin-top:0;">This is not a list you can choose from today. We are finalizing formal pathway agreements now. Until one is signed, we describe partners by type of school and region, not by name.</p>
           <p class="sec-sub measure" style="margin-top:16px;">Have a college in mind that is not in our network yet? Tell us, and we will reach out on your behalf.</p>
-          <a class="cta-btn secondary" href="#/families" style="display:inline-block;margin-top:22px;">Tell Us Where You Want to Go</a>
+          <a class="cta-btn secondary" href="#/book" style="display:inline-block;margin-top:22px;">Tell Us Where You Want to Go</a>
         </div>
       </div>
     </div>
@@ -1083,7 +1097,33 @@
     <div class="wrap">
       <h2>Not sure where to start?</h2>
       <p>Book a free 20&#8209;minute consultation. We will talk about your goals and help you see which route fits you.</p>
-      <div class="ctas"><a class="cta-btn" href="#/families">Book Your Free Consultation</a></div>
+      <div class="ctas"><a class="cta-btn" href="#/book">Book Your Free Consultation</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK A CONSULTATION ============ -->
+<section class="route" data-route="book" aria-labelledby="book-h1">
+  <div class="band tight">
+    <div class="wrap">
+      <div class="book-grid">
+        <div class="book-intro">
+          <span class="eyebrow">Free consultation</span>
+          <h1 id="book-h1">Book your free 20&#8209;minute consultation.</h1>
+          <p class="lede">Pick a time that works for you. We will talk about your goals and help you see which route fits.</p>
+          <ul class="book-points">
+            <li>No cost and no obligation.</li>
+            <li>One free session per family.</li>
+            <li>A video call on Zoom. Times are shown in your own time zone.</li>
+            <li>Available to students 18 and older.</li>
+          </ul>
+          <p class="book-alt">Want to look at the options first? See <a href="#/pathways">Pathways &amp; Pricing</a>.</p>
+        </div>
+        <div class="book-embed">
+          <iframe src="https://cal.com/academichorizons/20min?embed=true&amp;layout=month_view" title="Book a free consultation" loading="lazy"></iframe>
+          <p class="book-fallback">Calendar not showing? <a href="https://cal.com/academichorizons/20min" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1162,27 +1202,8 @@
       <div id="consult" style="margin-top:56px;">
         <span class="eyebrow">Book your free consultation</span>
         <h2 style="margin-top:10px;font-size:24px;">One 20&#8209;minute session. No obligation.</h2>
-        <form class="form-wrap" id="consult-form">
-          <div class="grid2">
-            <div class="field"><label for="f-name">Parent / guardian name</label><input id="f-name" name="name" type="text" required autocomplete="name"></div>
-            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
-          </div>
-          <div class="grid2">
-            <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" type="text" required autocomplete="country-name"></div>
-            <div class="field"><label for="f-pathway">Pathway of interest</label>
-              <select id="f-pathway" name="pathway">
-                <option>Not sure yet</option>
-                <option>Pathway Starter</option>
-                <option>Full-Service Pathway</option>
-                <option>Direct Admission Premium</option>
-              </select>
-            </div>
-          </div>
-          <div class="field"><label for="f-msg">Anything we should know?</label><textarea id="f-msg" name="message"></textarea></div>
-          <button type="submit" class="cta-btn">Request My Free Consultation</button>
-          <p class="form-note">This is a design prototype — no information is sent anywhere. Connect this form to your CRM or booking tool to go live.</p>
-          <div class="form-confirm" id="form-confirm">Thanks — in a live version of this site, your request would now be in an advisor's queue, and you'd get a confirmation email within one business day.</div>
-        </form>
+        <p class="sec-sub measure">Pick a time that works for you. We will talk about your goals and help you see which route fits.</p>
+        <a class="cta-btn" href="#/book" style="display:inline-block;margin-top:22px;">Choose a Time</a>
       </div>
     </div>
   </div>
@@ -1222,7 +1243,7 @@
     <div class="wrap">
       <h2>Ready to talk to an advisor?</h2>
       <p>Start with a free, no&#8209;obligation consultation — the same first step every family takes.</p>
-      <div class="ctas"><a class="cta-btn" href="#/families">Book Your Free Consultation</a></div>
+      <div class="ctas"><a class="cta-btn" href="#/book">Book Your Free Consultation</a></div>
     </div>
   </div>
 </section>
@@ -1287,6 +1308,7 @@
         <h2>Information we collect</h2>
         <ul>
           <li>Contact details you give us: name, email, country, and phone number.</li>
+          <li>Booking details: when you book a consultation, our scheduling service, Cal.com, receives your name, email, and any notes you add, so we can confirm and hold the call.</li>
           <li>Information you share during advising: academic history, goals, and family circumstances that help us find the right pathway.</li>
           <li>Documents you upload for an application: transcripts, test scores, essays, and financial documentation.</li>
           <li>Basic usage data about this website (pages visited, general location by country) to understand how families use it.</li>
@@ -1338,7 +1360,7 @@
       </div>
       <div>
         <h4>Start</h4>
-        <a href="#/families">Book Free Consultation</a>
+        <a href="#/book">Book Free Consultation</a>
         <a href="#/terms">Terms of Service</a>
         <a href="#/privacy">Privacy Policy</a>
       </div>
@@ -1352,13 +1374,14 @@
 
 <script>
 (function(){
-  var routes = ['home','pathways','what-is-2plus2','where-you-can-study','families','about','terms','privacy'];
+  var routes = ['home','pathways','what-is-2plus2','where-you-can-study','families','book','about','terms','privacy'];
   var titles = {
     'home':'Academic Horizons USA — Eurasia Foundation',
     'pathways':'Pathways & Pricing — Academic Horizons USA',
     'what-is-2plus2':'What is 2+2? — Academic Horizons USA',
     'where-you-can-study':'Where You Can Study — Academic Horizons USA',
     'families':'Families & FAQ — Academic Horizons USA',
+    'book':'Book a Free Consultation — Academic Horizons USA',
     'about':'About Eurasia Foundation — Academic Horizons USA',
     'terms':'Terms of Service — Academic Horizons USA',
     'privacy':'Privacy Policy — Academic Horizons USA'
@@ -1413,14 +1436,6 @@
   pathwaySel.addEventListener('change', updateCalc);
   tierSel.addEventListener('change', updateCalc);
   updateCalc();
-
-  var form = document.getElementById('consult-form');
-  var confirm = document.getElementById('form-confirm');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    confirm.classList.add('show');
-    confirm.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-  });
 
 })();
 
